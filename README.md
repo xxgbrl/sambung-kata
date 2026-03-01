@@ -42,7 +42,7 @@ Cari kata berdasarkan awalan, akhiran, atau huruf yang terkandung. Tandai kata y
 
 ```bash
 # Clone repository
-git clone https://github.com/<username>/sambungkata.git
+git clone https://github.com/verssache/sambungkata.git
 cd sambungkata
 
 # Jalankan server
@@ -82,11 +82,6 @@ Fitur andalan buat menang sambung kata. Konsepnya sederhana:
 | `z` | 🔴 | Hampir tidak ada kata berawalan Z di KBBI |
 | `x` | 🔴 | Nyaris mustahil untuk disambung |
 | `q` | 🔴 | Tidak ada di KBBI |
-| `f` | 🟡 | Pilihan sangat sedikit |
-| `v` | 🟡 | Jarang sekali |
-| `za` | 🔴 | Susah disambung |
-| `zi` | 🔴 | Bikin lawan pusing |
-| `zu` | 🔴 | Mati kutu |
 
 Trap bersifat **prioritas**, bukan filter — kalau tidak ada kata yang cocok dengan trap suffix, kata-kata biasa tetap ditampilkan.
 
