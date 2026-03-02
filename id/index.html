@@ -1,697 +1,1083 @@
 <!doctype html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Roblox Words Cheatsheet</title>
-        <link rel="icon" type="image/x-icon" href="../icon2.jpg">
-        <style>
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
-:root{
-  --bg0:#050507;
-  --bg1:#0a0a0f;
-  --bg2:#12121b;
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roblox Words Cheatsheet</title>
+    <link rel="icon" type="image/x-icon" href="../icon2.jpg">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
-  --card: rgba(255,255,255,0.055);
-  --card2: rgba(255,255,255,0.08);
-  --border: rgba(255,255,255,0.12);
+        :root {
+            --bg0: #050507;
+            --bg1: #0a0a0f;
+            --bg2: #12121b;
 
-  --text:#f1f3ff;
-  --muted:rgba(241,243,255,.62);
+            --card: rgba(255, 255, 255, 0.055);
+            --card2: rgba(255, 255, 255, 0.08);
+            --border: rgba(255, 255, 255, 0.12);
 
-  --shadow: 0 18px 55px rgba(0,0,0,.60);
-  --shadow2: 0 12px 28px rgba(0,0,0,.45);
+            --text: #f1f3ff;
+            --muted: rgba(241, 243, 255, .62);
 
-  --accent: rgba(255,255,255,.90);   /* subtle */
-  --accentGlow: rgba(255,255,255,.10);
+            --shadow: 0 18px 55px rgba(0, 0, 0, .60);
+            --shadow2: 0 12px 28px rgba(0, 0, 0, .45);
 
-  --green:#34d399;
-  --orange:#fb923c;
-  --red:#fb7185;
-}
+            --accent: rgba(255, 255, 255, .90);
+            /* subtle */
+            --accentGlow: rgba(255, 255, 255, .10);
 
-*{ box-sizing:border-box; margin:0; padding:0; }
-html, body{ height:100%; }
-body{
-  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color: var(--text);
-  background:
-    radial-gradient(1100px 520px at 15% -10%, rgba(255,255,255,.06), transparent 60%),
-    radial-gradient(900px 480px at 90% 0%, rgba(255,255,255,.04), transparent 55%),
-    radial-gradient(900px 480px at 55% 120%, rgba(255,255,255,.035), transparent 60%),
-    linear-gradient(180deg, var(--bg0), var(--bg1) 45%, var(--bg2));
-}
+            --green: #34d399;
+            --orange: #fb923c;
+            --red: #fb7185;
+        }
 
-/* Page */
-.page{ min-height: 100vh; padding: 18px 14px 46px; }
-.shell{ max-width: 1150px; margin: 0 auto; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* Topbar */
-.topbar{
-  display:flex; align-items:center; justify-content:space-between; gap: 14px;
-  padding: 16px 16px;
-  background: rgba(255,255,255,.045);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  box-shadow: var(--shadow2);
-  backdrop-filter: blur(12px);
-}
-.brand{ display:flex; gap: 12px; align-items:center; min-width: 220px; }
-.logo{
-  width: 42px; height: 42px; border-radius: 16px;
-  background: rgba(255,255,255,.90);
-  color:#0a0a10;
-  display:flex; align-items:center; justify-content:center;
-  font-weight: 950; letter-spacing:-0.6px;
-  box-shadow: 0 10px 22px rgba(0,0,0,.35);
-}
-.brand h1{
-  font-size: 1.18rem; font-weight: 950; letter-spacing:-0.6px; line-height: 1.1;
-  color: rgba(255,255,255,.92);
-}
-.brand p{ font-size: 0.86rem; color: var(--muted); margin-top: 2px; }
-.hint{
-  font-size: 0.82rem; color: var(--muted);
-  padding: 8px 12px; border-radius: 999px;
-  border: 1px dashed rgba(255,255,255,.22);
-  background: rgba(255,255,255,.04);
-  white-space: nowrap;
-}
+        html,
+        body {
+            height: 100%;
+        }
 
-/* Workspace */
-.workspace{
-  margin-top: 14px;
-  display:grid;
-  grid-template-columns: 330px 1fr;
-  gap: 12px;
-  align-items:start;
-}
+        body {
+            font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(1100px 520px at 15% -10%, rgba(255, 255, 255, .06), transparent 60%),
+                radial-gradient(900px 480px at 90% 0%, rgba(255, 255, 255, .04), transparent 55%),
+                radial-gradient(900px 480px at 55% 120%, rgba(255, 255, 255, .035), transparent 60%),
+                linear-gradient(180deg, var(--bg0), var(--bg1) 45%, var(--bg2));
+        }
 
-/* Sidebar panel */
-.panel{
-  background: rgba(255,255,255,.045);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  box-shadow: var(--shadow2);
-  padding: 16px;
-  backdrop-filter: blur(12px);
-  position: sticky;
-  top: 14px;
-}
-.panel h2{
-  font-size: 0.92rem;
-  font-weight: 950;
-  letter-spacing: .2px;
-  margin-bottom: 10px;
-  color: rgba(241,243,255,.90);
-}
-.divider{ height: 1px; background: rgba(255,255,255,.10); margin: 14px 0; }
+        /* Page */
+        .page {
+            min-height: 100vh;
+            padding: 18px 14px 46px;
+        }
 
-/* Controls */
-.controls{ display:flex; flex-direction:column; gap: 10px; }
-.mode-group{
-  display:flex; gap:6px; padding: 6px;
-  border-radius: 18px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.10);
-}
-.mode-btn{
-  flex: 1 1 auto;
-  border: 1px solid transparent;
-  background: transparent;
-  color: rgba(241,243,255,.72);
-  font-weight: 900;
-  font-size: 0.80rem;
-  padding: 10px 10px;
-  border-radius: 14px;
-  cursor:pointer;
-  transition: all .16s ease;
-}
-.mode-btn:hover{ background: rgba(255,255,255,.07); color: var(--text); }
-.mode-btn.active{
-  background: rgba(255,255,255,.90);
-  color: #0a0a10;
-  box-shadow: 0 12px 26px rgba(0,0,0,.35);
-}
+        .shell {
+            max-width: 1150px;
+            margin: 0 auto;
+        }
 
-/* Buttons */
-.icon-btn{
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.045);
-  border-radius: 18px;
-  padding: 11px 12px;
-  cursor:pointer;
-  font-weight: 950;
-  font-size: 0.86rem;
-  display:flex; align-items:center; justify-content:center; gap: 8px;
-  transition: all .16s ease;
-  color: rgba(241,243,255,.88);
-}
-.icon-btn:hover{
-  transform: translateY(-1px);
-  box-shadow: var(--shadow2);
-  border-color: rgba(255,255,255,.22);
-  background: rgba(255,255,255,.06);
-}
-.trap-btn.has-traps{
-  border-color: rgba(251,113,133,.45);
-  background: rgba(251,113,133,.12);
-  color: #ffd0d9;
-  position: relative;
-}
-.trap-badge{
-  position:absolute; top:-8px; right:-8px;
-  width: 20px; height: 20px; border-radius: 999px;
-  background: #fb7185; color:#0a0a10;
-  font-size: 0.70rem; font-weight: 950;
-  display:flex; align-items:center; justify-content:center;
-  box-shadow: 0 12px 22px rgba(0,0,0,.45);
-}
+        /* Topbar */
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 16px 16px;
+            background: rgba(255, 255, 255, .045);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            box-shadow: var(--shadow2);
+            backdrop-filter: blur(12px);
+        }
 
-/* Stats */
-.stats-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.stat{
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.04);
-  border-radius: 20px;
-  padding: 12px 12px;
-}
-.stat .label{ font-size: 0.72rem; color: rgba(241,243,255,.62); font-weight: 850; margin-bottom: 6px; }
-.stat .value{ font-size: 1.08rem; font-weight: 950; letter-spacing: -0.3px; }
-.value.green{ color: var(--green); }
-.value.orange{ color: var(--orange); }
-.value.red{ color: var(--red); }
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            min-width: 220px;
+        }
 
-/* Action row */
-.actions{ display:flex; gap: 10px; margin-top: 10px; }
-.add-btn, .reset-btn{
-  flex: 1;
-  border-radius: 18px;
-  padding: 10px 12px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.04);
-  font-weight: 950;
-  cursor:pointer;
-  transition: all .16s ease;
-  color: rgba(241,243,255,.92);
-}
-.add-btn{
-  border-color: rgba(255,255,255,.18);
-  background: rgba(255,255,255,.08);
-}
-.add-btn:hover{ box-shadow: var(--shadow2); transform: translateY(-1px); }
-.reset-btn{
-  border-color: rgba(251,113,133,.28);
-  background: rgba(251,113,133,.10);
-  color: #ffd0d9;
-}
-.reset-btn:hover{ box-shadow: var(--shadow2); transform: translateY(-1px); }
-.reset-btn.hidden{ display:none; }
+        .logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, .90);
+            color: #0a0a10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 950;
+            letter-spacing: -0.6px;
+            box-shadow: 0 10px 22px rgba(0, 0, 0, .35);
+        }
 
-/* Main */
-.main{
-  background: rgba(255,255,255,.045);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  box-shadow: var(--shadow2);
-  backdrop-filter: blur(12px);
-  overflow: clip;
-}
-.searchbar{
-  padding: 16px;
-  border-bottom: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
-}
-.search-box{ position: relative; }
-.search-box svg{
-  position:absolute; left: 14px; top: 50%;
-  transform: translateY(-50%);
-  width: 20px; height: 20px;
-  color: rgba(241,243,255,.55);
-  pointer-events:none;
-}
-.search-box input{
-  width: 100%;
-  padding: 14px 14px 14px 44px;
-  border-radius: 18px;
-  border: 1.5px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.05);
-  color: var(--text);
-  font-size: 1rem;
-  font-weight: 750;
-  outline: none;
-  transition: box-shadow .16s ease, border-color .16s ease, background .16s ease;
-}
-.search-box input:focus{
-  border-color: rgba(255,255,255,.26);
-  box-shadow: 0 0 0 4px var(--accentGlow);
-  background: rgba(255,255,255,.075);
-}
-.search-box input::placeholder{ color: rgba(241,243,255,.46); }
+        .brand h1 {
+            font-size: 1.18rem;
+            font-weight: 950;
+            letter-spacing: -0.6px;
+            line-height: 1.1;
+            color: rgba(255, 255, 255, .92);
+        }
 
-/* Results */
-.results{ padding: 12px 12px 70px; }
-.results-info{
-  padding: 10px 12px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.04);
-  border-radius: 18px;
-  margin-bottom: 10px;
-  font-size: 0.86rem;
-  color: rgba(241,243,255,.72);
-}
-.results-info strong{ color: rgba(255,255,255,.90); }
+        .brand p {
+            font-size: 0.86rem;
+            color: var(--muted);
+            margin-top: 2px;
+        }
 
-.word-list{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.word-item{
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.04);
-  border-radius: 20px;
-  padding: 12px 12px;
-  display:flex; align-items:center; gap: 10px;
-  cursor:pointer;
-  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
-}
-.word-item:hover{
-  transform: translateY(-1px);
-  box-shadow: var(--shadow2);
-  border-color: rgba(255,255,255,.18);
-  background: rgba(255,255,255,.055);
-}
-.word-item.used{ opacity: .55; }
-.word-item.used .word-text{ text-decoration: line-through; text-decoration-color: rgba(241,243,255,.35); }
-.check-box{
-  width: 22px; height: 22px; border-radius: 8px;
-  border: 2px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.04);
-  display:flex; align-items:center; justify-content:center;
-  flex-shrink:0;
-}
-.check-box svg{ width: 14px; height: 14px; opacity: 0; color:#0a0a10; }
-.word-item.used .check-box{ background: rgba(52,211,153,.92); border-color: rgba(52,211,153,.92); }
-.word-item.used .check-box svg{ opacity: 1; }
-.word-text{ flex:1; font-weight: 950; letter-spacing: .2px; font-size: 0.95rem; }
-.word-text mark{
-  background: rgba(255,255,255,.14);
-  color: rgba(255,255,255,.92);
-  border-radius: 7px;
-  padding: 0 4px;
-}
-.word-len{
-  font-size: 0.72rem;
-  color: rgba(241,243,255,.58);
-  background: rgba(255,255,255,.045);
-  border: 1px solid rgba(255,255,255,.10);
-  padding: 4px 8px;
-  border-radius: 999px;
-  font-weight: 950;
-  white-space: nowrap;
-}
-.trash-btn, .copy-btn{
-  width: 32px; height: 32px;
-  border-radius: 14px;
-  border: 1px solid transparent;
-  background: transparent;
-  color: rgba(241,243,255,.62);
-  opacity: .75;
-  cursor:pointer;
-  display:flex; align-items:center; justify-content:center;
-  transition: all .12s ease;
-  flex-shrink:0;
-}
-.trash-btn:hover{
-  opacity: 1;
-  color: #ffd0d9;
-  border-color: rgba(251,113,133,.28);
-  background: rgba(251,113,133,.12);
-}
-.copy-btn:hover{
-  opacity: 1;
-  color: rgba(255,255,255,.90);
-  border-color: rgba(255,255,255,.18);
-  background: rgba(255,255,255,.10);
-}
-.copy-btn.copied{
-  opacity: 1;
-  color: #bff7df;
-  border-color: rgba(52,211,153,.22);
-  background: rgba(52,211,153,.12);
-}
-.trap-match{
-  font-size: 0.70rem;
-  font-weight: 950;
-  color: #ffd0d9;
-  background: rgba(251,113,133,.12);
-  border: 1px solid rgba(251,113,133,.28);
-  padding: 3px 8px;
-  border-radius: 999px;
-  white-space: nowrap;
-  flex-shrink:0;
-}
+        .hint {
+            font-size: 0.82rem;
+            color: var(--muted);
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px dashed rgba(255, 255, 255, .22);
+            background: rgba(255, 255, 255, .04);
+            white-space: nowrap;
+        }
 
-/* State + load more */
-.state-msg{ text-align:center; padding: 54px 16px; color: rgba(241,243,255,.68); }
-.state-msg .emoji{ font-size: 2.6rem; margin-bottom: 10px; }
-.state-msg h3{ color: var(--text); margin-bottom: 6px; font-size: 1.02rem; font-weight: 950; }
-.state-msg p{ font-size: 0.88rem; }
-.spinner{
-  width: 34px; height: 34px;
-  border: 3px solid rgba(255,255,255,.12);
-  border-top-color: rgba(255,255,255,.75);
-  border-radius: 50%;
-  animation: spin .7s linear infinite;
-  margin: 0 auto 14px;
-}
-@keyframes spin{ to{ transform: rotate(360deg); } }
-.load-more{
-  display:block;
-  width: 100%;
-  padding: 12px 14px;
-  margin-top: 12px;
-  border-radius: 18px;
-  border: 1.5px dashed rgba(255,255,255,.20);
-  background: rgba(255,255,255,.06);
-  color: rgba(241,243,255,.92);
-  font-weight: 950;
-  cursor:pointer;
-  transition: all .16s ease;
-}
-.load-more:hover{ background: rgba(255,255,255,.08); }
+        /* Workspace */
+        .workspace {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: 330px 1fr;
+            gap: 12px;
+            align-items: start;
+        }
 
-/* Dialog */
-.confirm-overlay{
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,.62);
-  display:flex; align-items:center; justify-content:center;
-  padding: 18px; z-index: 999;
-}
-.confirm-box{
-  width: min(560px, 100%);
-  background: rgba(18,18,32,.92);
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 24px;
-  box-shadow: var(--shadow);
-  padding: 18px;
-  backdrop-filter: blur(12px);
-}
-.confirm-box h3{ font-size: 1.02rem; margin-bottom: 8px; font-weight: 950; text-align:center; }
-.confirm-box p{ font-size: 0.88rem; color: rgba(241,243,255,.68); text-align:center; margin-bottom: 14px; }
-.confirm-box .btn-row{ display:flex; gap: 10px; flex-wrap: wrap; }
-.confirm-box button{
-  flex:1;
-  padding: 10px 12px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.05);
-  color: rgba(241,243,255,.90);
-  font-weight: 950;
-  cursor:pointer;
-  transition: all .16s ease;
-  min-width: 130px;
-}
-.confirm-box .cancel-btn:hover{ background: rgba(255,255,255,.08); }
-.confirm-box .danger-btn{
-  background: rgba(251,113,133,.92);
-  border-color: rgba(251,113,133,.92);
-  color:#0a0a10;
-}
-.confirm-box .success-btn{
-  background: rgba(52,211,153,.90);
-  border-color: rgba(52,211,153,.90);
-  color:#052014;
-}
-.confirm-box .success-btn:disabled{ opacity:.45; cursor:not-allowed; }
-.confirm-box input[type="text"]{
-  width:100%;
-  padding: 12px 14px;
-  border-radius: 18px;
-  border: 1.5px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-  color: var(--text);
-  font-weight: 850;
-  outline:none;
-  margin-bottom: 6px;
-}
-.confirm-box input[type="text"]:focus{
-  border-color: rgba(255,255,255,.28);
-  box-shadow: 0 0 0 4px var(--accentGlow);
-}
-.confirm-box .input-error{ min-height: 18px; color: #ffd0d9; font-size: 0.80rem; }
+        /* Sidebar panel */
+        .panel {
+            background: rgba(255, 255, 255, .045);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            box-shadow: var(--shadow2);
+            padding: 16px;
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 14px;
+        }
 
-/* Trap dialog */
-.trap-dialog{ text-align:left; }
-.trap-dialog h3, .trap-dialog p{ text-align:center; }
-.trap-tags{
-  display:flex; flex-wrap:wrap; gap: 8px;
-  min-height: 44px;
-  padding: 10px;
-  border-radius: 18px;
-  border: 1.5px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.06);
-  margin-bottom: 8px;
-  align-items:center;
-}
-.trap-tag{
-  display:inline-flex; align-items:center; gap: 8px;
-  background: rgba(251,113,133,.14);
-  border: 1px solid rgba(251,113,133,.34);
-  color: #ffd0d9;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 950;
-}
-.trap-tag .remove-tag{ cursor:pointer; font-size: 1.1rem; line-height: 1; opacity:.7; }
-.trap-tag .remove-tag:hover{ opacity:1; }
-.trap-input-row{ display:flex; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
-.trap-input-row input{ flex:1; min-width: 180px; }
-.trap-input-row button{ flex:none !important; padding: 10px 14px !important; }
-.trap-suggestions{ margin-top: 10px; }
-.trap-suggestions p{ font-size: 0.80rem; color: rgba(241,243,255,.65); font-weight: 950; margin-bottom: 8px; }
-.trap-sug-list{ display:flex; flex-wrap:wrap; gap: 8px; }
-.trap-sug-btn{
-  padding: 8px 12px !important;
-  border-radius: 999px !important;
-  border: 1px solid rgba(255,255,255,.14) !important;
-  background: rgba(255,255,255,.05) !important;
-  color: rgba(241,243,255,.72) !important;
-  font-weight: 950 !important;
-}
-.trap-sug-btn:hover{
-  border-color: rgba(255,255,255,.26) !important;
-  background: rgba(255,255,255,.08) !important;
-  color: rgba(241,243,255,.92) !important;
-}
-.trap-sug-btn.already{ opacity:.40; pointer-events:none; }
+        .panel h2 {
+            font-size: 0.92rem;
+            font-weight: 950;
+            letter-spacing: .2px;
+            margin-bottom: 10px;
+            color: rgba(241, 243, 255, .90);
+        }
 
-/* Responsive */
-@media (max-width: 980px){
-  .workspace{ grid-template-columns: 1fr; }
-  .panel{ position: static; }
-  .word-list{ grid-template-columns: 1fr; }
-  .hint{ display:none; }
-}
-@media (max-width: 480px){
-  .topbar{ padding: 14px 14px; border-radius: 20px; }
-  .panel, .main{ border-radius: 20px; }
-  .brand{ min-width: unset; }
-  .logo{ width: 40px; height: 40px; border-radius: 14px; }
-  .searchbar{ padding: 14px; }
-  .search-box input{ padding-top: 13px; padding-bottom: 13px; }
-}
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, .10);
+            margin: 14px 0;
+        }
 
-.icon-wrap{
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 10px 22px rgba(0,0,0,.35);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-shrink:0;
-      overflow:hidden;
-    }
-    .icon-wrap img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display:block;
-    }
+        /* Controls */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-/* Responsive: stack buttons on mobile */
-    @media (max-width: 640px){
-      .btn-row{ grid-template-columns: 1fr; }
-    }
-    @media (max-width: 520px){
-      body{ padding: 12px; }
-      .card{ border-radius: 22px; }
-      .head{ padding: 18px; gap: 12px; }
-      .icon-wrap{ width: 46px; height: 46px; border-radius: 14px; }
-      .title h1{ font-size: 1.40rem; }
-      .body{ padding: 16px 18px 18px; }
-      .foot{ padding: 12px 18px 16px; }
-      .btn{ padding: 13px 13px; border-radius: 18px; }
-    }
-</style>
-    </head>
-    <body>
+        .mode-group {
+            display: flex;
+            gap: 6px;
+            padding: 6px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .10);
+        }
 
-        <div class="page">
-            <div class="shell">
-                <header class="topbar">
-                    <div class="brand">
-                        <div class="icon-wrap">
-                            <img src="../sk.png" alt="Icon">
+        .mode-btn {
+            flex: 1 1 auto;
+            border: 1px solid transparent;
+            background: transparent;
+            color: rgba(241, 243, 255, .72);
+            font-weight: 900;
+            font-size: 0.80rem;
+            padding: 10px 10px;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all .16s ease;
+        }
+
+        .mode-btn:hover {
+            background: rgba(255, 255, 255, .07);
+            color: var(--text);
+        }
+
+        .mode-btn.active {
+            background: rgba(255, 255, 255, .90);
+            color: #0a0a10;
+            box-shadow: 0 12px 26px rgba(0, 0, 0, .35);
+        }
+
+        /* Buttons */
+        .icon-btn {
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .045);
+            border-radius: 18px;
+            padding: 11px 12px;
+            cursor: pointer;
+            font-weight: 950;
+            font-size: 0.86rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all .16s ease;
+            color: rgba(241, 243, 255, .88);
+        }
+
+        .icon-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow2);
+            border-color: rgba(255, 255, 255, .22);
+            background: rgba(255, 255, 255, .06);
+        }
+
+        .trap-btn.has-traps {
+            border-color: rgba(251, 113, 133, .45);
+            background: rgba(251, 113, 133, .12);
+            color: #ffd0d9;
+            position: relative;
+        }
+
+        .trap-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 20px;
+            height: 20px;
+            border-radius: 999px;
+            background: #fb7185;
+            color: #0a0a10;
+            font-size: 0.70rem;
+            font-weight: 950;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 22px rgba(0, 0, 0, .45);
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .stat {
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .04);
+            border-radius: 20px;
+            padding: 12px 12px;
+        }
+
+        .stat .label {
+            font-size: 0.72rem;
+            color: rgba(241, 243, 255, .62);
+            font-weight: 850;
+            margin-bottom: 6px;
+        }
+
+        .stat .value {
+            font-size: 1.08rem;
+            font-weight: 950;
+            letter-spacing: -0.3px;
+        }
+
+        .value.green {
+            color: var(--green);
+        }
+
+        .value.orange {
+            color: var(--orange);
+        }
+
+        .value.red {
+            color: var(--red);
+        }
+
+        /* Action row */
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .add-btn,
+        .reset-btn {
+            flex: 1;
+            border-radius: 18px;
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .04);
+            font-weight: 950;
+            cursor: pointer;
+            transition: all .16s ease;
+            color: rgba(241, 243, 255, .92);
+        }
+
+        .add-btn {
+            border-color: rgba(255, 255, 255, .18);
+            background: rgba(255, 255, 255, .08);
+        }
+
+        .add-btn:hover {
+            box-shadow: var(--shadow2);
+            transform: translateY(-1px);
+        }
+
+        .reset-btn {
+            border-color: rgba(251, 113, 133, .28);
+            background: rgba(251, 113, 133, .10);
+            color: #ffd0d9;
+        }
+
+        .reset-btn:hover {
+            box-shadow: var(--shadow2);
+            transform: translateY(-1px);
+        }
+
+        .reset-btn.hidden {
+            display: none;
+        }
+
+        /* Main */
+        .main {
+            background: rgba(255, 255, 255, .045);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            box-shadow: var(--shadow2);
+            backdrop-filter: blur(12px);
+            overflow: clip;
+        }
+
+        .searchbar {
+            padding: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .03);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box svg {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            color: rgba(241, 243, 255, .55);
+            pointer-events: none;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 14px 14px 44px;
+            border-radius: 18px;
+            border: 1.5px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .05);
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 750;
+            outline: none;
+            transition: box-shadow .16s ease, border-color .16s ease, background .16s ease;
+        }
+
+        .search-box input:focus {
+            border-color: rgba(255, 255, 255, .26);
+            box-shadow: 0 0 0 4px var(--accentGlow);
+            background: rgba(255, 255, 255, .075);
+        }
+
+        .search-box input::placeholder {
+            color: rgba(241, 243, 255, .46);
+        }
+
+        /* Results */
+        .results {
+            padding: 12px 12px 70px;
+        }
+
+        .results-info {
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .04);
+            border-radius: 18px;
+            margin-bottom: 10px;
+            font-size: 0.86rem;
+            color: rgba(241, 243, 255, .72);
+        }
+
+        .results-info strong {
+            color: rgba(255, 255, 255, .90);
+        }
+
+        .word-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .word-item {
+            border: 1px solid rgba(255, 255, 255, .10);
+            background: rgba(255, 255, 255, .04);
+            border-radius: 20px;
+            padding: 12px 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
+        }
+
+        .word-item:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow2);
+            border-color: rgba(255, 255, 255, .18);
+            background: rgba(255, 255, 255, .055);
+        }
+
+        .word-item.used {
+            opacity: .55;
+        }
+
+        .word-item.used .word-text {
+            text-decoration: line-through;
+            text-decoration-color: rgba(241, 243, 255, .35);
+        }
+
+        .check-box {
+            width: 22px;
+            height: 22px;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, .18);
+            background: rgba(255, 255, 255, .04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .check-box svg {
+            width: 14px;
+            height: 14px;
+            opacity: 0;
+            color: #0a0a10;
+        }
+
+        .word-item.used .check-box {
+            background: rgba(52, 211, 153, .92);
+            border-color: rgba(52, 211, 153, .92);
+        }
+
+        .word-item.used .check-box svg {
+            opacity: 1;
+        }
+
+        .word-text {
+            flex: 1;
+            font-weight: 950;
+            letter-spacing: .2px;
+            font-size: 0.95rem;
+        }
+
+        .word-text mark {
+            background: rgba(255, 255, 255, .14);
+            color: rgba(255, 255, 255, .92);
+            border-radius: 7px;
+            padding: 0 4px;
+        }
+
+        .word-len {
+            font-size: 0.72rem;
+            color: rgba(241, 243, 255, .58);
+            background: rgba(255, 255, 255, .045);
+            border: 1px solid rgba(255, 255, 255, .10);
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-weight: 950;
+            white-space: nowrap;
+        }
+
+        .trash-btn,
+        .copy-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 14px;
+            border: 1px solid transparent;
+            background: transparent;
+            color: rgba(241, 243, 255, .62);
+            opacity: .75;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .12s ease;
+            flex-shrink: 0;
+        }
+
+        .trash-btn:hover {
+            opacity: 1;
+            color: #ffd0d9;
+            border-color: rgba(251, 113, 133, .28);
+            background: rgba(251, 113, 133, .12);
+        }
+
+        .copy-btn:hover {
+            opacity: 1;
+            color: rgba(255, 255, 255, .90);
+            border-color: rgba(255, 255, 255, .18);
+            background: rgba(255, 255, 255, .10);
+        }
+
+        .copy-btn.copied {
+            opacity: 1;
+            color: #bff7df;
+            border-color: rgba(52, 211, 153, .22);
+            background: rgba(52, 211, 153, .12);
+        }
+
+        .trap-match {
+            font-size: 0.70rem;
+            font-weight: 950;
+            color: #ffd0d9;
+            background: rgba(251, 113, 133, .12);
+            border: 1px solid rgba(251, 113, 133, .28);
+            padding: 3px 8px;
+            border-radius: 999px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* State + load more */
+        .state-msg {
+            text-align: center;
+            padding: 54px 16px;
+            color: rgba(241, 243, 255, .68);
+        }
+
+        .state-msg .emoji {
+            font-size: 2.6rem;
+            margin-bottom: 10px;
+        }
+
+        .state-msg h3 {
+            color: var(--text);
+            margin-bottom: 6px;
+            font-size: 1.02rem;
+            font-weight: 950;
+        }
+
+        .state-msg p {
+            font-size: 0.88rem;
+        }
+
+        .spinner {
+            width: 34px;
+            height: 34px;
+            border: 3px solid rgba(255, 255, 255, .12);
+            border-top-color: rgba(255, 255, 255, .75);
+            border-radius: 50%;
+            animation: spin .7s linear infinite;
+            margin: 0 auto 14px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .load-more {
+            display: block;
+            width: 100%;
+            padding: 12px 14px;
+            margin-top: 12px;
+            border-radius: 18px;
+            border: 1.5px dashed rgba(255, 255, 255, .20);
+            background: rgba(255, 255, 255, .06);
+            color: rgba(241, 243, 255, .92);
+            font-weight: 950;
+            cursor: pointer;
+            transition: all .16s ease;
+        }
+
+        .load-more:hover {
+            background: rgba(255, 255, 255, .08);
+        }
+
+        /* Dialog */
+        .confirm-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .62);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            z-index: 999;
+        }
+
+        .confirm-box {
+            width: min(560px, 100%);
+            background: rgba(18, 18, 32, .92);
+            border: 1px solid rgba(255, 255, 255, .14);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 18px;
+            backdrop-filter: blur(12px);
+        }
+
+        .confirm-box h3 {
+            font-size: 1.02rem;
+            margin-bottom: 8px;
+            font-weight: 950;
+            text-align: center;
+        }
+
+        .confirm-box p {
+            font-size: 0.88rem;
+            color: rgba(241, 243, 255, .68);
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .confirm-box .btn-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .confirm-box button {
+            flex: 1;
+            padding: 10px 12px;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .05);
+            color: rgba(241, 243, 255, .90);
+            font-weight: 950;
+            cursor: pointer;
+            transition: all .16s ease;
+            min-width: 130px;
+        }
+
+        .confirm-box .cancel-btn:hover {
+            background: rgba(255, 255, 255, .08);
+        }
+
+        .confirm-box .danger-btn {
+            background: rgba(251, 113, 133, .92);
+            border-color: rgba(251, 113, 133, .92);
+            color: #0a0a10;
+        }
+
+        .confirm-box .success-btn {
+            background: rgba(52, 211, 153, .90);
+            border-color: rgba(52, 211, 153, .90);
+            color: #052014;
+        }
+
+        .confirm-box .success-btn:disabled {
+            opacity: .45;
+            cursor: not-allowed;
+        }
+
+        .confirm-box input[type="text"] {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 18px;
+            border: 1.5px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .06);
+            color: var(--text);
+            font-weight: 850;
+            outline: none;
+            margin-bottom: 6px;
+        }
+
+        .confirm-box input[type="text"]:focus {
+            border-color: rgba(255, 255, 255, .28);
+            box-shadow: 0 0 0 4px var(--accentGlow);
+        }
+
+        .confirm-box .input-error {
+            min-height: 18px;
+            color: #ffd0d9;
+            font-size: 0.80rem;
+        }
+
+        /* Trap dialog */
+        .trap-dialog {
+            text-align: left;
+        }
+
+        .trap-dialog h3,
+        .trap-dialog p {
+            text-align: center;
+        }
+
+        .trap-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            min-height: 44px;
+            padding: 10px;
+            border-radius: 18px;
+            border: 1.5px solid rgba(255, 255, 255, .12);
+            background: rgba(255, 255, 255, .06);
+            margin-bottom: 8px;
+            align-items: center;
+        }
+
+        .trap-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(251, 113, 133, .14);
+            border: 1px solid rgba(251, 113, 133, .34);
+            color: #ffd0d9;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 950;
+        }
+
+        .trap-tag .remove-tag {
+            cursor: pointer;
+            font-size: 1.1rem;
+            line-height: 1;
+            opacity: .7;
+        }
+
+        .trap-tag .remove-tag:hover {
+            opacity: 1;
+        }
+
+        .trap-input-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+
+        .trap-input-row input {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .trap-input-row button {
+            flex: none !important;
+            padding: 10px 14px !important;
+        }
+
+        .trap-suggestions {
+            margin-top: 10px;
+        }
+
+        .trap-suggestions p {
+            font-size: 0.80rem;
+            color: rgba(241, 243, 255, .65);
+            font-weight: 950;
+            margin-bottom: 8px;
+        }
+
+        .trap-sug-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .trap-sug-btn {
+            padding: 8px 12px !important;
+            border-radius: 999px !important;
+            border: 1px solid rgba(255, 255, 255, .14) !important;
+            background: rgba(255, 255, 255, .05) !important;
+            color: rgba(241, 243, 255, .72) !important;
+            font-weight: 950 !important;
+        }
+
+        .trap-sug-btn:hover {
+            border-color: rgba(255, 255, 255, .26) !important;
+            background: rgba(255, 255, 255, .08) !important;
+            color: rgba(241, 243, 255, .92) !important;
+        }
+
+        .trap-sug-btn.already {
+            opacity: .40;
+            pointer-events: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 980px) {
+            .workspace {
+                grid-template-columns: 1fr;
+            }
+
+            .panel {
+                position: static;
+            }
+
+            .word-list {
+                grid-template-columns: 1fr;
+            }
+
+            .hint {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .topbar {
+                padding: 14px 14px;
+                border-radius: 20px;
+            }
+
+            .panel,
+            .main {
+                border-radius: 20px;
+            }
+
+            .brand {
+                min-width: unset;
+            }
+
+            .logo {
+                width: 40px;
+                height: 40px;
+                border-radius: 14px;
+            }
+
+            .searchbar {
+                padding: 14px;
+            }
+
+            .search-box input {
+                padding-top: 13px;
+                padding-bottom: 13px;
+            }
+        }
+
+        .icon-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .12);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, .35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .icon-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Responsive: stack buttons on mobile */
+        @media (max-width: 640px) {
+            .btn-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            body {
+                padding: 12px;
+            }
+
+            .card {
+                border-radius: 22px;
+            }
+
+            .head {
+                padding: 18px;
+                gap: 12px;
+            }
+
+            .icon-wrap {
+                width: 46px;
+                height: 46px;
+                border-radius: 14px;
+            }
+
+            .title h1 {
+                font-size: 1.40rem;
+            }
+
+            .body {
+                padding: 16px 18px 18px;
+            }
+
+            .foot {
+                padding: 12px 18px 16px;
+            }
+
+            .btn {
+                padding: 13px 13px;
+                border-radius: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+        <div class="shell">
+            <header class="topbar">
+                <div class="brand">
+                    <div class="icon-wrap">
+                        <img src="../sk.png" alt="Icon">
+                    </div>
+                    <div>
+                        <h1>Sambung Kata</h1>
+                    </div>
+                </div>
+                <div class="hint">⌨️ Tekan <b>/</b> untuk fokus · <b>Esc</b> untuk clear</div>
+            </header>
+
+            <div class="workspace">
+                <aside class="sidebar">
+                    <section class="panel">
+                        <h2>Mode & Filter</h2>
+
+                        <div class="controls">
+                            <div class="mode-group" role="tablist" aria-label="Mode pencarian">
+                                <button class="mode-btn active" data-mode="prefix" onclick="setMode('prefix')"
+                                    role="tab" aria-selected="true">Awalan</button>
+                                <button class="mode-btn" data-mode="suffix" onclick="setMode('suffix')" role="tab"
+                                    aria-selected="false">Akhiran</button>
+                                <button class="mode-btn" data-mode="contains" onclick="setMode('contains')" role="tab"
+                                    aria-selected="false">Mengandung</button>
+                            </div>
+
+                            <button class="icon-btn trap-btn" id="trapBtn" onclick="showTrapDialog()">🪤 Trap
+                                (exclude)</button>
                         </div>
-                        <div>
-                            <h1>Sambung Kata</h1>
+
+                        <div class="divider"></div>
+
+                        <h2>Ringkasan</h2>
+                        <div class="stats-grid">
+                            <div class="stat">
+                                <div class="label">Total kata</div>
+                                <div class="value green" id="totalWords">...</div>
+                            </div>
+                            <div class="stat">
+                                <div class="label">Terpakai</div>
+                                <div class="value orange" id="usedCount">0</div>
+                            </div>
+                            <div class="stat" id="deletedChip" style="display:none">
+                                <div class="label">Dihapus</div>
+                                <div class="value red" id="deletedCount">0</div>
+                            </div>
+                        </div>
+
+                        <div class="actions">
+                            <!-- <button class="add-btn" onclick="showAddDialog()">+ Tambah</button> -->
+                            <button class="reset-btn hidden" id="resetBtn" onclick="confirmReset()">Reset</button>
+                        </div>
+                    </section>
+                </aside>
+
+                <main class="main">
+                    <div class="searchbar">
+                        <div class="search-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            </svg>
+                            <input type="text" id="searchInput" placeholder="Ketik awalan / akhiran / bagian kata..."
+                                autocomplete="off" spellcheck="false" />
                         </div>
                     </div>
-                    <div class="hint">⌨️ Tekan <b>/</b> untuk fokus · <b>Esc</b> untuk clear</div>
-                </header>
 
-                <div class="workspace">
-                    <aside class="sidebar">
-                        <section class="panel">
-                            <h2>Mode & Filter</h2>
-
-                            <div class="controls">
-                                <div class="mode-group" role="tablist" aria-label="Mode pencarian">
-                                    <button class="mode-btn active" data-mode="prefix" onclick="setMode('prefix')" role="tab" aria-selected="true">Awalan</button>
-                                    <button class="mode-btn" data-mode="suffix" onclick="setMode('suffix')" role="tab" aria-selected="false">Akhiran</button>
-                                    <button class="mode-btn" data-mode="contains" onclick="setMode('contains')" role="tab" aria-selected="false">Mengandung</button>
-                                </div>
-
-                                <button class="icon-btn trap-btn" id="trapBtn" onclick="showTrapDialog()">🪤 Trap (exclude)</button>
-                            </div>
-
-                            <div class="divider"></div>
-
-                            <h2>Ringkasan</h2>
-                            <div class="stats-grid">
-                                <div class="stat">
-                                    <div class="label">Total kata</div>
-                                    <div class="value green" id="totalWords">...</div>
-                                </div>
-                                <div class="stat">
-                                    <div class="label">Terpakai</div>
-                                    <div class="value orange" id="usedCount">0</div>
-                                </div>
-                                <div class="stat" id="deletedChip" style="display:none">
-                                    <div class="label">Dihapus</div>
-                                    <div class="value red" id="deletedCount">0</div>
-                                </div>
-                            </div>
-
-                            <div class="actions">
-                                <!-- <button class="add-btn" onclick="showAddDialog()">+ Tambah</button> -->
-                                <button class="reset-btn hidden" id="resetBtn" onclick="confirmReset()">Reset</button>
-                            </div>
-                        </section>
-                    </aside>
-
-                    <main class="main">
-                        <div class="searchbar">
-                            <div class="search-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
-                                </svg>
-                                <input type="text" id="searchInput" placeholder="Ketik awalan / akhiran / bagian kata..." autocomplete="off" spellcheck="false" />
-                            </div>
+                    <div class="results" id="results">
+                        <div class="state-msg" id="loadingState">
+                            <div class="spinner"></div>
+                            <h3>Memuat database kata...</h3>
+                            <p>Sabar ya, lagi download 71k+ kata</p>
                         </div>
-
-                        <div class="results" id="results">
-                            <div class="state-msg" id="loadingState">
-                                <div class="spinner"></div>
-                                <h3>Memuat database kata...</h3>
-                                <p>Sabar ya, lagi download 71k+ kata</p>
-                            </div>
-                        </div>
-                    </main>
-                </div>
+                    </div>
+                </main>
             </div>
         </div>
+    </div>
 
-        <script>
-            // --- State ---
-            let allWords = [];
-            let currentMode = "prefix";
-            let currentQuery = "";
-            let filteredWords = [];
-            let displayCount = 100;
-            const BATCH_SIZE = 100;
+    <script>
+        // --- State ---
+        let allWords = [];
+        let currentMode = "prefix";
+        let currentQuery = "";
+        let filteredWords = [];
+        let displayCount = 100;
+        const BATCH_SIZE = 100;
 
-            // Used words (persisted in localStorage)
-            let usedWords = new Set(
-                JSON.parse(localStorage.getItem("sk_used") || "[]"),
-            );
+        // Used words (persisted in localStorage)
+        let usedWords = new Set(
+            JSON.parse(localStorage.getItem("sk_used") || "[]"),
+        );
 
-            // Deleted words (persisted in localStorage)
-            let deletedWords = new Set(
-                JSON.parse(localStorage.getItem("sk_deleted") || "[]"),
-            );
+        // Deleted words (persisted in localStorage)
+        let deletedWords = new Set(
+            JSON.parse(localStorage.getItem("sk_deleted") || "[]"),
+        );
 
-            // Manually added words (persisted in localStorage)
-            let addedWords = new Set(
-                JSON.parse(localStorage.getItem("sk_added") || "[]"),
-            );
+        // Manually added words (persisted in localStorage)
+        let addedWords = new Set(
+            JSON.parse(localStorage.getItem("sk_added") || "[]"),
+        );
 
-            // Trap suffixes (persisted in localStorage)
-            let trapSuffixes = JSON.parse(
-                localStorage.getItem("sk_traps") || "[]",
-            );
+        // Trap suffixes (persisted in localStorage)
+        let trapSuffixes = JSON.parse(
+            localStorage.getItem("sk_traps") || "[]",
+        );
 
-            // --- DOM ---
-            const searchInput = document.getElementById("searchInput");
-            const resultsDiv = document.getElementById("results");
-            const totalWordsEl = document.getElementById("totalWords");
-            const usedCountEl = document.getElementById("usedCount");
-            const resetBtn = document.getElementById("resetBtn");
-            const loadingState = document.getElementById("loadingState");
-            const deletedCountEl = document.getElementById("deletedCount");
-            const deletedChip = document.getElementById("deletedChip");
+        // --- DOM ---
+        const searchInput = document.getElementById("searchInput");
+        const resultsDiv = document.getElementById("results");
+        const totalWordsEl = document.getElementById("totalWords");
+        const usedCountEl = document.getElementById("usedCount");
+        const resetBtn = document.getElementById("resetBtn");
+        const loadingState = document.getElementById("loadingState");
+        const deletedCountEl = document.getElementById("deletedCount");
+        const deletedChip = document.getElementById("deletedChip");
 
-            // --- Trap persistence & UI ---
-            function saveTraps() {
-                localStorage.setItem("sk_traps", JSON.stringify(trapSuffixes));
-                updateTrapBtn();
+        // --- Trap persistence & UI ---
+        function saveTraps() {
+            localStorage.setItem("sk_traps", JSON.stringify(trapSuffixes));
+            updateTrapBtn();
+        }
+
+        function updateTrapBtn() {
+            const btn = document.getElementById("trapBtn");
+            const existing = btn.querySelector(".trap-badge");
+            if (existing) existing.remove();
+            if (trapSuffixes.length > 0) {
+                btn.classList.add("has-traps");
+                const badge = document.createElement("span");
+                badge.className = "trap-badge";
+                badge.textContent = trapSuffixes.length;
+                btn.appendChild(badge);
+            } else {
+                btn.classList.remove("has-traps");
             }
+        }
 
-            function updateTrapBtn() {
-                const btn = document.getElementById("trapBtn");
-                const existing = btn.querySelector(".trap-badge");
-                if (existing) existing.remove();
-                if (trapSuffixes.length > 0) {
-                    btn.classList.add("has-traps");
-                    const badge = document.createElement("span");
-                    badge.className = "trap-badge";
-                    badge.textContent = trapSuffixes.length;
-                    btn.appendChild(badge);
-                } else {
-                    btn.classList.remove("has-traps");
-                }
-            }
+        const TRAP_SUGGESTIONS = [
+            { suffix: "z", label: "z — hampir ga ada kata awalan z" },
+            { suffix: "x", label: "x — nyaris mustahil" },
+            { suffix: "f", label: "f — pilihan dikit" },
+            { suffix: "v", label: "v — jarang banget" },
+            { suffix: "q", label: "q — ga ada di KBBI" },
+            { suffix: "za", label: "za — susah nyambung" },
+            { suffix: "zi", label: "zi — bikin pusing" },
+            { suffix: "zu", label: "zu — mati kutu" },
+            { suffix: "ks", label: "ks — tricky" },
+            { suffix: "nz", label: "nz — hampir impossible" },
+        ];
 
-            const TRAP_SUGGESTIONS = [
-                { suffix: "z", label: "z — hampir ga ada kata awalan z" },
-                { suffix: "x", label: "x — nyaris mustahil" },
-                { suffix: "f", label: "f — pilihan dikit" },
-                { suffix: "v", label: "v — jarang banget" },
-                { suffix: "q", label: "q — ga ada di KBBI" },
-                { suffix: "za", label: "za — susah nyambung" },
-                { suffix: "zi", label: "zi — bikin pusing" },
-                { suffix: "zu", label: "zu — mati kutu" },
-                { suffix: "ks", label: "ks — tricky" },
-                { suffix: "nz", label: "nz — hampir impossible" },
-            ];
-
-            function showTrapDialog() {
-                const overlay = document.createElement("div");
-                overlay.className = "confirm-overlay";
-                overlay.innerHTML = `
+        function showTrapDialog() {
+            const overlay = document.createElement("div");
+            overlay.className = "confirm-overlay";
+            overlay.innerHTML = `
         <div class="confirm-box trap-dialog">
           <h3>🪤 Atur Trap Suffixes</h3>
           <p>Kata dengan akhiran ini bakal diprioritasin di hasil pencarian biar lawan susah nyambung.</p>
@@ -711,157 +1097,157 @@ body{
           </div>
         </div>
       `;
-                document.body.appendChild(overlay);
-                overlay.addEventListener("click", (e) => {
-                    if (e.target === overlay) overlay.remove();
-                });
+            document.body.appendChild(overlay);
+            overlay.addEventListener("click", (e) => {
+                if (e.target === overlay) overlay.remove();
+            });
 
-                renderTrapTags();
-                renderTrapSuggestions();
+            renderTrapTags();
+            renderTrapSuggestions();
 
-                const trapInput = document.getElementById("trapInput");
-                trapInput.focus();
-                trapInput.addEventListener("keydown", (e) => {
-                    if (e.key === "Enter") addTrapFromInput();
-                });
+            const trapInput = document.getElementById("trapInput");
+            trapInput.focus();
+            trapInput.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") addTrapFromInput();
+            });
+        }
+
+        function renderTrapTags() {
+            const container = document.getElementById("trapTags");
+            if (!container) return;
+            if (trapSuffixes.length === 0) {
+                container.innerHTML =
+                    '<span style="color:var(--text-dim);font-size:0.8rem;">Belum ada trap suffix...</span>';
+                return;
             }
+            container.innerHTML = trapSuffixes
+                .map(
+                    (s) =>
+                        `<span class="trap-tag">${s}<span class="remove-tag" onclick="removeTrap('${s}')">&times;</span></span>`,
+                )
+                .join("");
+        }
 
-            function renderTrapTags() {
-                const container = document.getElementById("trapTags");
-                if (!container) return;
-                if (trapSuffixes.length === 0) {
-                    container.innerHTML =
-                        '<span style="color:var(--text-dim);font-size:0.8rem;">Belum ada trap suffix...</span>';
-                    return;
+        function renderTrapSuggestions() {
+            const list = document.getElementById("trapSugList");
+            if (!list) return;
+            list.innerHTML = TRAP_SUGGESTIONS.map((s) => {
+                const already = trapSuffixes.includes(s.suffix);
+                return `<button class="trap-sug-btn${already ? " already" : ""}" title="${s.label}" onclick="addTrapSuffix('${s.suffix}')">${s.suffix}</button>`;
+            }).join("");
+        }
+
+        function addTrapFromInput() {
+            const input = document.getElementById("trapInput");
+            const err = document.getElementById("trapError");
+            const raw = input.value.trim().toLowerCase();
+            if (!raw) return;
+
+            // Support comma-separated input
+            const parts = raw
+                .split(",")
+                .map((s) => s.trim())
+                .filter(Boolean);
+            let added = 0;
+            for (const part of parts) {
+                if (!/^[a-z]+$/.test(part)) {
+                    err.textContent = `"${part}" — huruf a-z aja!`;
+                    continue;
                 }
-                container.innerHTML = trapSuffixes
-                    .map(
-                        (s) =>
-                            `<span class="trap-tag">${s}<span class="remove-tag" onclick="removeTrap('${s}')">&times;</span></span>`,
-                    )
-                    .join("");
-            }
-
-            function renderTrapSuggestions() {
-                const list = document.getElementById("trapSugList");
-                if (!list) return;
-                list.innerHTML = TRAP_SUGGESTIONS.map((s) => {
-                    const already = trapSuffixes.includes(s.suffix);
-                    return `<button class="trap-sug-btn${already ? " already" : ""}" title="${s.label}" onclick="addTrapSuffix('${s.suffix}')">${s.suffix}</button>`;
-                }).join("");
-            }
-
-            function addTrapFromInput() {
-                const input = document.getElementById("trapInput");
-                const err = document.getElementById("trapError");
-                const raw = input.value.trim().toLowerCase();
-                if (!raw) return;
-
-                // Support comma-separated input
-                const parts = raw
-                    .split(",")
-                    .map((s) => s.trim())
-                    .filter(Boolean);
-                let added = 0;
-                for (const part of parts) {
-                    if (!/^[a-z]+$/.test(part)) {
-                        err.textContent = `"${part}" — huruf a-z aja!`;
-                        continue;
-                    }
-                    if (trapSuffixes.includes(part)) {
-                        err.textContent = `"${part}" udah ada`;
-                        continue;
-                    }
-                    trapSuffixes.push(part);
-                    added++;
-                    err.textContent = "";
+                if (trapSuffixes.includes(part)) {
+                    err.textContent = `"${part}" udah ada`;
+                    continue;
                 }
-
-                if (added > 0) {
-                    saveTraps();
-                    renderTrapTags();
-                    renderTrapSuggestions();
-                    if (currentQuery.trim()) renderResults();
-                }
-                input.value = "";
-                input.focus();
+                trapSuffixes.push(part);
+                added++;
+                err.textContent = "";
             }
 
-            function addTrapSuffix(suffix) {
-                if (trapSuffixes.includes(suffix)) return;
-                trapSuffixes.push(suffix);
+            if (added > 0) {
                 saveTraps();
                 renderTrapTags();
                 renderTrapSuggestions();
                 if (currentQuery.trim()) renderResults();
             }
+            input.value = "";
+            input.focus();
+        }
 
-            function removeTrap(suffix) {
-                trapSuffixes = trapSuffixes.filter((s) => s !== suffix);
-                saveTraps();
-                renderTrapTags();
-                renderTrapSuggestions();
-                if (currentQuery.trim()) renderResults();
+        function addTrapSuffix(suffix) {
+            if (trapSuffixes.includes(suffix)) return;
+            trapSuffixes.push(suffix);
+            saveTraps();
+            renderTrapTags();
+            renderTrapSuggestions();
+            if (currentQuery.trim()) renderResults();
+        }
+
+        function removeTrap(suffix) {
+            trapSuffixes = trapSuffixes.filter((s) => s !== suffix);
+            saveTraps();
+            renderTrapTags();
+            renderTrapSuggestions();
+            if (currentQuery.trim()) renderResults();
+        }
+
+        function clearAllTraps() {
+            trapSuffixes = [];
+            saveTraps();
+            renderTrapTags();
+            renderTrapSuggestions();
+            if (currentQuery.trim()) renderResults();
+        }
+
+        // --- Persistence ---
+        function saveUsed() {
+            localStorage.setItem("sk_used", JSON.stringify([...usedWords]));
+            updateUsedCount();
+        }
+
+        function updateUsedCount() {
+            usedCountEl.textContent =
+                usedWords.size.toLocaleString("id-ID");
+            resetBtn.classList.toggle("hidden", usedWords.size === 0);
+        }
+
+        // --- Deleted words persistence (permanent) ---
+        function saveDeleted() {
+            localStorage.setItem(
+                "sk_deleted",
+                JSON.stringify([...deletedWords]),
+            );
+            updateDeletedCount();
+        }
+
+        function updateDeletedCount() {
+            deletedCountEl.textContent =
+                deletedWords.size.toLocaleString("id-ID");
+            deletedChip.style.display = deletedWords.size > 0 ? "" : "none";
+        }
+
+        // --- Add word ---
+        function saveAdded() {
+            localStorage.setItem(
+                "sk_added",
+                JSON.stringify([...addedWords]),
+            );
+        }
+
+        function binaryInsert(arr, word) {
+            let lo = 0,
+                hi = arr.length;
+            while (lo < hi) {
+                const mid = (lo + hi) >>> 1;
+                if (arr[mid] < word) lo = mid + 1;
+                else hi = mid;
             }
+            arr.splice(lo, 0, word);
+        }
 
-            function clearAllTraps() {
-                trapSuffixes = [];
-                saveTraps();
-                renderTrapTags();
-                renderTrapSuggestions();
-                if (currentQuery.trim()) renderResults();
-            }
-
-            // --- Persistence ---
-            function saveUsed() {
-                localStorage.setItem("sk_used", JSON.stringify([...usedWords]));
-                updateUsedCount();
-            }
-
-            function updateUsedCount() {
-                usedCountEl.textContent =
-                    usedWords.size.toLocaleString("id-ID");
-                resetBtn.classList.toggle("hidden", usedWords.size === 0);
-            }
-
-            // --- Deleted words persistence (permanent) ---
-            function saveDeleted() {
-                localStorage.setItem(
-                    "sk_deleted",
-                    JSON.stringify([...deletedWords]),
-                );
-                updateDeletedCount();
-            }
-
-            function updateDeletedCount() {
-                deletedCountEl.textContent =
-                    deletedWords.size.toLocaleString("id-ID");
-                deletedChip.style.display = deletedWords.size > 0 ? "" : "none";
-            }
-
-            // --- Add word ---
-            function saveAdded() {
-                localStorage.setItem(
-                    "sk_added",
-                    JSON.stringify([...addedWords]),
-                );
-            }
-
-            function binaryInsert(arr, word) {
-                let lo = 0,
-                    hi = arr.length;
-                while (lo < hi) {
-                    const mid = (lo + hi) >>> 1;
-                    if (arr[mid] < word) lo = mid + 1;
-                    else hi = mid;
-                }
-                arr.splice(lo, 0, word);
-            }
-
-            function showAddDialog() {
-                const overlay = document.createElement("div");
-                overlay.className = "confirm-overlay";
-                overlay.innerHTML = `
+        function showAddDialog() {
+            const overlay = document.createElement("div");
+            overlay.className = "confirm-overlay";
+            overlay.innerHTML = `
         <div class="confirm-box">
           <h3>Tambah Kata Baru</h3>
           <p>Masukin kata yang mau ditambahin ke database.</p>
@@ -873,138 +1259,138 @@ body{
           </div>
         </div>
       `;
-                document.body.appendChild(overlay);
-                overlay.addEventListener("click", (e) => {
-                    if (e.target === overlay) overlay.remove();
-                });
+            document.body.appendChild(overlay);
+            overlay.addEventListener("click", (e) => {
+                if (e.target === overlay) overlay.remove();
+            });
 
-                const input = document.getElementById("addWordInput");
-                const btn = document.getElementById("addWordBtn");
-                const err = document.getElementById("addWordError");
+            const input = document.getElementById("addWordInput");
+            const btn = document.getElementById("addWordBtn");
+            const err = document.getElementById("addWordError");
 
-                input.focus();
-                input.addEventListener("input", () => {
-                    const w = input.value.trim().toLowerCase();
-                    input.value = input.value.toLowerCase();
-                    if (!w) {
-                        err.textContent = "";
-                        btn.disabled = true;
-                        return;
-                    }
-                    if (!/^[a-z]+$/.test(w)) {
-                        err.textContent = "Huruf a-z aja, tanpa spasi/simbol";
-                        btn.disabled = true;
-                        return;
-                    }
-                    if (w.length < 3) {
-                        err.textContent = "Minimal 3 huruf";
-                        btn.disabled = true;
-                        return;
-                    }
-                    if (allWords.includes(w)) {
-                        err.textContent = "Kata udah ada di database";
-                        btn.disabled = true;
-                        return;
-                    }
+            input.focus();
+            input.addEventListener("input", () => {
+                const w = input.value.trim().toLowerCase();
+                input.value = input.value.toLowerCase();
+                if (!w) {
                     err.textContent = "";
-                    btn.disabled = false;
-                });
-                input.addEventListener("keydown", (e) => {
-                    if (e.key === "Enter" && !btn.disabled) doAddWord();
-                });
+                    btn.disabled = true;
+                    return;
+                }
+                if (!/^[a-z]+$/.test(w)) {
+                    err.textContent = "Huruf a-z aja, tanpa spasi/simbol";
+                    btn.disabled = true;
+                    return;
+                }
+                if (w.length < 3) {
+                    err.textContent = "Minimal 3 huruf";
+                    btn.disabled = true;
+                    return;
+                }
+                if (allWords.includes(w)) {
+                    err.textContent = "Kata udah ada di database";
+                    btn.disabled = true;
+                    return;
+                }
+                err.textContent = "";
+                btn.disabled = false;
+            });
+            input.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" && !btn.disabled) doAddWord();
+            });
+        }
+
+        function doAddWord() {
+            const input = document.getElementById("addWordInput");
+            const word = input.value.trim().toLowerCase();
+            if (!word) return;
+
+            // Add to allWords (sorted insert)
+            binaryInsert(allWords, word);
+
+            // Persist addition to words.json via server API
+            fetch("api/add", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ word }),
+            }).catch((err) =>
+                console.warn("Failed to add to server:", err),
+            );
+
+            // Update total
+            totalWordsEl.textContent =
+                allWords.length.toLocaleString("id-ID");
+
+            // Close dialog
+            document.querySelector(".confirm-overlay")?.remove();
+
+            // Re-render if there's an active search
+            if (currentQuery.trim()) renderResults();
+        }
+
+        // --- Delete word (instant, persists to server) ---
+        function deleteWord(word, el, evt) {
+            evt.stopPropagation();
+
+            // Remove from allWords (sorted, use binary search)
+            const idx = allWords.indexOf(word);
+            if (idx !== -1) allWords.splice(idx, 1);
+
+            // Remove from filteredWords
+            const fIdx = filteredWords.indexOf(word);
+            if (fIdx !== -1) filteredWords.splice(fIdx, 1);
+
+            // Remove from usedWords if present
+            usedWords.delete(word);
+            saveUsed();
+
+            // Remove from addedWords if it was manually added
+            if (addedWords.has(word)) {
+                addedWords.delete(word);
+                saveAdded();
             }
 
-            function doAddWord() {
-                const input = document.getElementById("addWordInput");
-                const word = input.value.trim().toLowerCase();
-                if (!word) return;
+            // Persist deletion to words.json via server API
+            fetch("api/delete", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ word }),
+            }).catch((err) =>
+                console.warn("Failed to delete from server:", err),
+            );
 
-                // Add to allWords (sorted insert)
-                binaryInsert(allWords, word);
+            // Animate out and remove DOM element
+            el.style.transition = "opacity 0.2s, transform 0.2s";
+            el.style.opacity = "0";
+            el.style.transform = "translateX(20px)";
+            setTimeout(() => el.remove(), 200);
 
-                // Persist addition to words.json via server API
-                fetch("api/add", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ word }),
-                }).catch((err) =>
-                    console.warn("Failed to add to server:", err),
-                );
-
-                // Update total
-                totalWordsEl.textContent =
-                    allWords.length.toLocaleString("id-ID");
-
-                // Close dialog
-                document.querySelector(".confirm-overlay")?.remove();
-
-                // Re-render if there's an active search
-                if (currentQuery.trim()) renderResults();
+            // Update total & results info
+            totalWordsEl.textContent =
+                allWords.length.toLocaleString("id-ID");
+            const info = resultsDiv.querySelector(".results-info");
+            if (info) {
+                info.innerHTML = `Ditemukan <strong>${filteredWords.length.toLocaleString("id-ID")}</strong> kata (urut A→Z)`;
             }
+        }
 
-            // --- Delete word (instant, persists to server) ---
-            function deleteWord(word, el, evt) {
-                evt.stopPropagation();
-
-                // Remove from allWords (sorted, use binary search)
-                const idx = allWords.indexOf(word);
-                if (idx !== -1) allWords.splice(idx, 1);
-
-                // Remove from filteredWords
-                const fIdx = filteredWords.indexOf(word);
-                if (fIdx !== -1) filteredWords.splice(fIdx, 1);
-
-                // Remove from usedWords if present
+        // --- Toggle word used ---
+        function toggleUsed(word, el) {
+            if (usedWords.has(word)) {
                 usedWords.delete(word);
-                saveUsed();
-
-                // Remove from addedWords if it was manually added
-                if (addedWords.has(word)) {
-                    addedWords.delete(word);
-                    saveAdded();
-                }
-
-                // Persist deletion to words.json via server API
-                fetch("api/delete", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ word }),
-                }).catch((err) =>
-                    console.warn("Failed to delete from server:", err),
-                );
-
-                // Animate out and remove DOM element
-                el.style.transition = "opacity 0.2s, transform 0.2s";
-                el.style.opacity = "0";
-                el.style.transform = "translateX(20px)";
-                setTimeout(() => el.remove(), 200);
-
-                // Update total & results info
-                totalWordsEl.textContent =
-                    allWords.length.toLocaleString("id-ID");
-                const info = resultsDiv.querySelector(".results-info");
-                if (info) {
-                    info.innerHTML = `Ditemukan <strong>${filteredWords.length.toLocaleString("id-ID")}</strong> kata (urutan acak)`;
-                }
+                el.classList.remove("used");
+            } else {
+                usedWords.add(word);
+                el.classList.add("used");
             }
+            saveUsed();
+        }
 
-            // --- Toggle word used ---
-            function toggleUsed(word, el) {
-                if (usedWords.has(word)) {
-                    usedWords.delete(word);
-                    el.classList.remove("used");
-                } else {
-                    usedWords.add(word);
-                    el.classList.add("used");
-                }
-                saveUsed();
-            }
-
-            // --- Reset ---
-            function confirmReset() {
-                const overlay = document.createElement("div");
-                overlay.className = "confirm-overlay";
-                overlay.innerHTML = `
+        // --- Reset ---
+        function confirmReset() {
+            const overlay = document.createElement("div");
+            overlay.className = "confirm-overlay";
+            overlay.innerHTML = `
         <div class="confirm-box">
           <h3>Reset semua centangan?</h3>
           <p>${usedWords.size.toLocaleString("id-ID")} kata yang udah dicentang bakal di-clear.</p>
@@ -1014,198 +1400,195 @@ body{
           </div>
         </div>
       `;
-                document.body.appendChild(overlay);
-                overlay.addEventListener("click", (e) => {
-                    if (e.target === overlay) overlay.remove();
-                });
-            }
+            document.body.appendChild(overlay);
+            overlay.addEventListener("click", (e) => {
+                if (e.target === overlay) overlay.remove();
+            });
+        }
 
-            function doReset() {
-                usedWords.clear();
-                saveUsed();
-                document.querySelector(".confirm-overlay")?.remove();
-                renderResults();
-            }
+        function doReset() {
+            usedWords.clear();
+            saveUsed();
+            document.querySelector(".confirm-overlay")?.remove();
+            renderResults();
+        }
 
-            // --- Shuffle (Fisher-Yates) ---
-            function shuffle(arr) {
-                const a = [...arr];
-                for (let i = a.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [a[i], a[j]] = [a[j], a[i]];
+        // --- Shuffle (Fisher-Yates) ---
+        function shuffle(arr) {
+            const a = [...arr];
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        // --- Load Words ---
+        async function loadWords() {
+            try {
+                const res = await fetch("words.json");
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                allWords = await res.json();
+                // Filter out previously deleted words
+                if (deletedWords.size > 0) {
+                    allWords = allWords.filter((w) => !deletedWords.has(w));
                 }
-                return a;
-            }
-
-            // --- Load Words ---
-            async function loadWords() {
-                try {
-                    const res = await fetch("words.json");
-                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                    allWords = await res.json();
-                    // Filter out previously deleted words
-                    if (deletedWords.size > 0) {
-                        allWords = allWords.filter((w) => !deletedWords.has(w));
+                // Merge in manually added words
+                if (addedWords.size > 0) {
+                    for (const w of addedWords) {
+                        if (!allWords.includes(w))
+                            binaryInsert(allWords, w);
                     }
-                    // Merge in manually added words
-                    if (addedWords.size > 0) {
-                        for (const w of addedWords) {
-                            if (!allWords.includes(w))
-                                binaryInsert(allWords, w);
-                        }
-                    }
-                    totalWordsEl.textContent =
-                        allWords.length.toLocaleString("id-ID");
-                    updateUsedCount();
-                    updateDeletedCount();
-                    loadingState.remove();
-                    showIdleState();
-                    searchInput.focus();
-                } catch (err) {
-                    loadingState.innerHTML = `
+                }
+                totalWordsEl.textContent =
+                    allWords.length.toLocaleString("id-ID");
+                updateUsedCount();
+                updateDeletedCount();
+                loadingState.remove();
+                showIdleState();
+                searchInput.focus();
+            } catch (err) {
+                loadingState.innerHTML = `
           <div class="state-msg">
             <div class="emoji">😵</div>
             <h3>Gagal memuat data</h3>
             <p>Pastikan file <code>wordsv1.json</code> ada di folder yang sama.<br/>Error: ${err.message}</p>
           </div>
         `;
-                }
+            }
+        }
+
+        // --- Search Logic ---
+        function filterWords(query, mode) {
+            if (!query) return [];
+            const q = query.toLowerCase().trim();
+            if (!q) return [];
+
+            let results;
+            switch (mode) {
+                case "prefix":
+                    results = binaryPrefixSearch(q);
+                    break;
+                case "suffix":
+                    results = allWords.filter((w) => w.endsWith(q));
+                    break;
+                case "contains":
+                    results = allWords.filter((w) => w.includes(q));
+                    break;
+                default:
+                    results = [];
             }
 
-            // --- Search Logic ---
-            function filterWords(query, mode) {
-                if (!query) return [];
-                const q = query.toLowerCase().trim();
-                if (!q) return [];
-
-                let results;
-                switch (mode) {
-                    case "prefix":
-                        results = binaryPrefixSearch(q);
-                        break;
-                    case "suffix":
-                        results = allWords.filter((w) => w.endsWith(q));
-                        break;
-                    case "contains":
-                        results = allWords.filter((w) => w.includes(q));
-                        break;
-                    default:
-                        results = [];
+            // Apply trap prioritization
+            if (trapSuffixes.length > 0) {
+                const trapped = [];
+                const normal = [];
+                for (const w of results) {
+                    const matchedTrap = trapSuffixes.find((s) => w.endsWith(s));
+                    if (matchedTrap) trapped.push(w);
+                    else normal.push(w);
                 }
-
-                // Apply trap prioritization
-                if (trapSuffixes.length > 0) {
-                    const trapped = [];
-                    const normal = [];
-                    for (const w of results) {
-                        const matchedTrap = trapSuffixes.find((s) =>
-                            w.endsWith(s),
-                        );
-                        if (matchedTrap) {
-                            trapped.push(w);
-                        } else {
-                            normal.push(w);
-                        }
-                    }
-                    // Shuffle each group independently, traps first
-                    return [...shuffle(trapped), ...shuffle(normal)];
-                }
-
-                // Shuffle results every time
-                return shuffle(results);
+                // Ascending order (A→Z) within each group, traps first
+                trapped.sort();
+                normal.sort();
+                return [...trapped, ...normal];
             }
 
-            function getMatchedTrap(word) {
-                if (trapSuffixes.length === 0) return null;
-                // Return the longest matching trap suffix for display
-                let best = null;
-                for (const s of trapSuffixes) {
-                    if (word.endsWith(s)) {
-                        if (!best || s.length > best.length) best = s;
-                    }
+            // Ascending order (A→Z)
+            return [...results].sort();
+        }
+
+        function getMatchedTrap(word) {
+            if (trapSuffixes.length === 0) return null;
+            // Return the longest matching trap suffix for display
+            let best = null;
+            for (const s of trapSuffixes) {
+                if (word.endsWith(s)) {
+                    if (!best || s.length > best.length) best = s;
                 }
-                return best;
             }
+            return best;
+        }
 
-            // Fast binary search for prefix on sorted array
-            function binaryPrefixSearch(prefix) {
-                let lo = 0,
-                    hi = allWords.length;
-                while (lo < hi) {
-                    const mid = (lo + hi) >>> 1;
-                    if (allWords[mid] < prefix) lo = mid + 1;
-                    else hi = mid;
-                }
-                const start = lo;
-
-                const prefixEnd =
-                    prefix.slice(0, -1) +
-                    String.fromCharCode(
-                        prefix.charCodeAt(prefix.length - 1) + 1,
-                    );
+        // Fast binary search for prefix on sorted array
+        function binaryPrefixSearch(prefix) {
+            let lo = 0,
                 hi = allWords.length;
-                while (lo < hi) {
-                    const mid = (lo + hi) >>> 1;
-                    if (allWords[mid] < prefixEnd) lo = mid + 1;
-                    else hi = mid;
-                }
-                const end = lo;
-
-                return allWords.slice(start, end);
+            while (lo < hi) {
+                const mid = (lo + hi) >>> 1;
+                if (allWords[mid] < prefix) lo = mid + 1;
+                else hi = mid;
             }
+            const start = lo;
 
-            // --- Rendering ---
-            function highlightMatch(word, query, mode) {
-                const q = query.toLowerCase();
-                let idx;
-                switch (mode) {
-                    case "prefix":
-                        idx = 0;
-                        break;
-                    case "suffix":
-                        idx = word.length - q.length;
-                        break;
-                    case "contains":
-                        idx = word.indexOf(q);
-                        break;
-                }
-                if (idx < 0) return word;
-                const before = word.slice(0, idx);
-                const match = word.slice(idx, idx + q.length);
-                const after = word.slice(idx + q.length);
-                return `${before}<mark>${match}</mark>${after}`;
+            const prefixEnd =
+                prefix.slice(0, -1) +
+                String.fromCharCode(
+                    prefix.charCodeAt(prefix.length - 1) + 1,
+                );
+            hi = allWords.length;
+            while (lo < hi) {
+                const mid = (lo + hi) >>> 1;
+                if (allWords[mid] < prefixEnd) lo = mid + 1;
+                else hi = mid;
             }
+            const end = lo;
 
-            const checkSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>`;
-            const trashSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/></svg>`;
-            const copySvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+            return allWords.slice(start, end);
+        }
 
-            function copyWord(word, btn, evt) {
-                evt.stopPropagation();
-                navigator.clipboard.writeText(word);
-                btn.classList.add("copied");
-                btn.innerHTML = checkSvg;
-                setTimeout(() => {
-                    btn.classList.remove("copied");
-                    btn.innerHTML = copySvg;
-                }, 1000);
+        // --- Rendering ---
+        function highlightMatch(word, query, mode) {
+            const q = query.toLowerCase();
+            let idx;
+            switch (mode) {
+                case "prefix":
+                    idx = 0;
+                    break;
+                case "suffix":
+                    idx = word.length - q.length;
+                    break;
+                case "contains":
+                    idx = word.indexOf(q);
+                    break;
             }
+            if (idx < 0) return word;
+            const before = word.slice(0, idx);
+            const match = word.slice(idx, idx + q.length);
+            const after = word.slice(idx + q.length);
+            return `${before}<mark>${match}</mark>${after}`;
+        }
 
-            function buildListHtml(from, to) {
-                let html = "";
-                for (let i = from; i < to; i++) {
-                    const w = filteredWords[i];
-                    const highlighted = highlightMatch(
-                        w,
-                        currentQuery,
-                        currentMode,
-                    );
-                    const isUsed = usedWords.has(w);
-                    const trap = getMatchedTrap(w);
-                    const trapHtml = trap
-                        ? `<span class="trap-match">🪤 …${trap}</span>`
-                        : "";
-                    html += `<div class="word-item${isUsed ? " used" : ""}" onclick="toggleUsed('${w}', this)">
+        const checkSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>`;
+        const trashSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/></svg>`;
+        const copySvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+
+        function copyWord(word, btn, evt) {
+            evt.stopPropagation();
+            navigator.clipboard.writeText(word);
+            btn.classList.add("copied");
+            btn.innerHTML = checkSvg;
+            setTimeout(() => {
+                btn.classList.remove("copied");
+                btn.innerHTML = copySvg;
+            }, 1000);
+        }
+
+        function buildListHtml(from, to) {
+            let html = "";
+            for (let i = from; i < to; i++) {
+                const w = filteredWords[i];
+                const highlighted = highlightMatch(
+                    w,
+                    currentQuery,
+                    currentMode,
+                );
+                const isUsed = usedWords.has(w);
+                const trap = getMatchedTrap(w);
+                const trapHtml = trap
+                    ? `<span class="trap-match">🪤 …${trap}</span>`
+                    : "";
+                html += `<div class="word-item${isUsed ? " used" : ""}" onclick="toggleUsed('${w}', this)">
           <div class="check-box">${checkSvg}</div>
           <span class="word-text">${highlighted}</span>
           ${trapHtml}
@@ -1213,128 +1596,129 @@ body{
           <span class="word-len">${w.length} huruf</span>
           <button class="trash-btn" onclick="deleteWord('${w}', this.parentElement, event)" title="Hapus kata">${trashSvg}</button>
         </div>`;
-                }
-                return html;
+            }
+            return html;
+        }
+
+        function renderResults() {
+            if (!currentQuery.trim()) {
+                showIdleState();
+                return;
             }
 
-            function renderResults() {
-                if (!currentQuery.trim()) {
-                    showIdleState();
-                    return;
-                }
+            filteredWords = filterWords(currentQuery, currentMode);
+            displayCount = BATCH_SIZE;
 
-                filteredWords = filterWords(currentQuery, currentMode);
-                displayCount = BATCH_SIZE;
-
-                if (filteredWords.length === 0) {
-                    resultsDiv.innerHTML = `
+            if (filteredWords.length === 0) {
+                resultsDiv.innerHTML = `
           <div class="state-msg">
             <div class="emoji">🤷</div>
             <h3>Ga ada yang cocok</h3>
             <p>Coba kata lain atau ganti mode pencarian</p>
           </div>
         `;
-                    return;
-                }
-
-                const trapCount =
-                    trapSuffixes.length > 0
-                        ? filteredWords.filter((w) => getMatchedTrap(w)).length
-                        : 0;
-                const trapInfo =
-                    trapCount > 0
-                        ? ` · <span style="color:var(--red)">🪤 ${trapCount} jebakan</span>`
-                        : "";
-                const infoHtml = `<div class="results-info">Ditemukan <strong>${filteredWords.length.toLocaleString("id-ID")}</strong> kata (urutan acak)${trapInfo}</div>`;
-                const listHtml = buildListHtml(
-                    0,
-                    Math.min(displayCount, filteredWords.length),
-                );
-                const moreHtml =
-                    filteredWords.length > displayCount
-                        ? `<button class="load-more" onclick="loadMore()">Tampilkan ${Math.min(BATCH_SIZE, filteredWords.length - displayCount)} kata lagi (${displayCount}/${filteredWords.length.toLocaleString("id-ID")})</button>`
-                        : "";
-
-                resultsDiv.innerHTML = `${infoHtml}<div class="word-list" id="wordList">${listHtml}</div>${moreHtml}`;
+                return;
             }
 
-            function loadMore() {
-                const prevCount = displayCount;
-                displayCount += BATCH_SIZE;
-                const newTo = Math.min(displayCount, filteredWords.length);
+            const trapCount =
+                trapSuffixes.length > 0
+                    ? filteredWords.filter((w) => getMatchedTrap(w)).length
+                    : 0;
+            const trapInfo =
+                trapCount > 0
+                    ? ` · <span style="color:var(--red)">🪤 ${trapCount} jebakan</span>`
+                    : "";
+            const infoHtml = `<div class="results-info">Ditemukan <strong>${filteredWords.length.toLocaleString("id-ID")}</strong> kata (urut A→Z)${trapInfo}</div>`;
+            const listHtml = buildListHtml(
+                0,
+                Math.min(displayCount, filteredWords.length),
+            );
+            const moreHtml =
+                filteredWords.length > displayCount
+                    ? `<button class="load-more" onclick="loadMore()">Tampilkan ${Math.min(BATCH_SIZE, filteredWords.length - displayCount)} kata lagi (${displayCount}/${filteredWords.length.toLocaleString("id-ID")})</button>`
+                    : "";
 
-                const wordList = document.getElementById("wordList");
-                wordList.insertAdjacentHTML(
-                    "beforeend",
-                    buildListHtml(prevCount, newTo),
-                );
+            resultsDiv.innerHTML = `${infoHtml}<div class="word-list" id="wordList">${listHtml}</div>${moreHtml}`;
+        }
 
-                const existing = resultsDiv.querySelector(".load-more");
-                if (existing) {
-                    if (displayCount >= filteredWords.length) {
-                        existing.remove();
-                    } else {
-                        existing.textContent = `Tampilkan ${Math.min(BATCH_SIZE, filteredWords.length - displayCount)} kata lagi (${displayCount}/${filteredWords.length.toLocaleString("id-ID")})`;
-                    }
+        function loadMore() {
+            const prevCount = displayCount;
+            displayCount += BATCH_SIZE;
+            const newTo = Math.min(displayCount, filteredWords.length);
+
+            const wordList = document.getElementById("wordList");
+            wordList.insertAdjacentHTML(
+                "beforeend",
+                buildListHtml(prevCount, newTo),
+            );
+
+            const existing = resultsDiv.querySelector(".load-more");
+            if (existing) {
+                if (displayCount >= filteredWords.length) {
+                    existing.remove();
+                } else {
+                    existing.textContent = `Tampilkan ${Math.min(BATCH_SIZE, filteredWords.length - displayCount)} kata lagi (${displayCount}/${filteredWords.length.toLocaleString("id-ID")})`;
                 }
             }
+        }
 
-            function showIdleState() {
-                resultsDiv.innerHTML = `
+        function showIdleState() {
+            resultsDiv.innerHTML = `
         <div class="state-msg">
           <div class="emoji">🎮</div>
           <h3>Siap tempur!</h3>
           <p>Ketik huruf di atas buat mulai cari kata<br/><span style="font-size:0.75rem;color:var(--text-dim)">Klik kata = tandain terpakai &nbsp;|&nbsp; 🗑 = hapus dari database</span></p>
         </div>
       `;
-            }
+        }
 
-            // --- Mode Toggle ---
-            function setMode(mode) {
-                currentMode = mode;
-                document.querySelectorAll(".mode-btn").forEach((btn) => {
-                    const isActive = btn.dataset.mode === mode;
-                    btn.classList.toggle("active", isActive);
-                    btn.setAttribute("aria-selected", isActive ? "true" : "false");
-                });
-                const placeholders = {
-                    prefix: 'Ketik awalan kata... (misal: "men")',
-                    suffix: 'Ketik akhiran kata... (misal: "si")',
-                    contains: 'Ketik huruf yang terkandung... (misal: "ang")',
-                };
-                searchInput.placeholder = placeholders[mode] || "";
+        // --- Mode Toggle ---
+        function setMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll(".mode-btn").forEach((btn) => {
+                const isActive = btn.dataset.mode === mode;
+                btn.classList.toggle("active", isActive);
+                btn.setAttribute("aria-selected", isActive ? "true" : "false");
+            });
+            const placeholders = {
+                prefix: 'Ketik awalan kata... (misal: "men")',
+                suffix: 'Ketik akhiran kata... (misal: "si")',
+                contains: 'Ketik huruf yang terkandung... (misal: "ang")',
+            };
+            searchInput.placeholder = placeholders[mode] || "";
+            renderResults();
+            searchInput.focus();
+        }
+
+        // --- Debounce ---
+        let debounceTimer;
+        searchInput.addEventListener("input", (e) => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                currentQuery = e.target.value;
                 renderResults();
+            }, 150);
+        });
+
+        // --- Keyboard shortcuts ---
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "/" && document.activeElement !== searchInput) {
+                e.preventDefault();
                 searchInput.focus();
+                searchInput.select();
             }
+            if (e.key === "Escape") {
+                searchInput.value = "";
+                currentQuery = "";
+                renderResults();
+                searchInput.blur();
+            }
+        });
 
-            // --- Debounce ---
-            let debounceTimer;
-            searchInput.addEventListener("input", (e) => {
-                clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(() => {
-                    currentQuery = e.target.value;
-                    renderResults();
-                }, 150);
-            });
+        // --- Init ---
+        updateTrapBtn();
+        loadWords();
+    </script>
+</body>
 
-            // --- Keyboard shortcuts ---
-            document.addEventListener("keydown", (e) => {
-                if (e.key === "/" && document.activeElement !== searchInput) {
-                    e.preventDefault();
-                    searchInput.focus();
-                    searchInput.select();
-                }
-                if (e.key === "Escape") {
-                    searchInput.value = "";
-                    currentQuery = "";
-                    renderResults();
-                    searchInput.blur();
-                }
-            });
-
-            // --- Init ---
-            updateTrapBtn();
-            loadWords();
-        </script>
-    </body>
 </html>
