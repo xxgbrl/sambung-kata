@@ -1,6 +1,4 @@
-# 🎮 Sambung Kata — Cheatsheet
-
-# 🎮 Last Letter — Cheatsheet
+# 🎮 Sambung Kata & Last Letter — Cheatsheet
 
 > Cheatsheet tool untuk game **Sambung Kata** dengan database 71.000+ kata Bahasa Indonesia dari KBBI.
 > Cheatsheet tool untuk game **Last Letter** dengan database 1.057.099+ kata Bahasa Inggris.
