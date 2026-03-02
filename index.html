@@ -1,1651 +1,250 @@
 <!doctype html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sambung Kata — Cheatsheet</title>
-        <style>
-            @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roblox Words Cheatsheet</title>
+  <link rel="icon" type="image/x-icon" href="icon2.jpg">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap");
+    :root{
+      --bg0:#050507; --bg1:#0a0a0f; --bg2:#12121b;
+      --card: rgba(255,255,255,0.055);
+      --border: rgba(255,255,255,0.12);
+      --text:#f1f3ff; --muted:rgba(241,243,255,.62);
+      --shadow: 0 18px 55px rgba(0,0,0,.60);
+      --shadow2: 0 12px 28px rgba(0,0,0,.45);
+    }
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    html, body{ height:100%; }
+    body{
+      font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1100px 520px at 15% -10%, rgba(255,255,255,.06), transparent 60%),
+        radial-gradient(900px 480px at 90% 0%, rgba(255,255,255,.04), transparent 55%),
+        radial-gradient(900px 480px at 55% 120%, rgba(255,255,255,.035), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1) 45%, var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 16px;
+    }
 
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+    .card{
+      width: min(760px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      overflow:hidden;
+    }
 
-            :root {
-                --bg: #0f0f13;
-                --surface: #1a1a24;
-                --surface2: #22222f;
-                --border: #2a2a3a;
-                --text: #e4e4ef;
-                --text-dim: #8888a0;
-                --accent: #7c6ff7;
-                --accent-glow: rgba(124, 111, 247, 0.25);
-                --green: #34d399;
-                --green-glow: rgba(52, 211, 153, 0.15);
-                --orange: #fb923c;
-                --red: #f87171;
-                --red-glow: rgba(248, 113, 113, 0.15);
-            }
+    .head{
+      padding: 22px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      display:flex;
+      gap: 14px;
+      align-items:center;
+    }
 
-            body {
-                font-family:
-                    "Inter",
-                    system-ui,
-                    -apple-system,
-                    sans-serif;
-                background: var(--bg);
-                color: var(--text);
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
+    .icon-wrap{
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 10px 22px rgba(0,0,0,.35);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
+      overflow:hidden;
+    }
+    .icon-wrap img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+    }
 
-            .container {
-                width: 100%;
-                max-width: 640px;
-                padding: 0 20px;
-            }
+    .title h1{
+      font-size: 1.65rem;
+      font-weight: 950;
+      letter-spacing: -0.7px;
+      line-height: 1.05;
+      color: rgba(255,255,255,.92);
+    }
+    .title p{
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.55;
+      max-width: 70ch;
+    }
 
-            /* Header */
-            .header {
-                text-align: center;
-                padding: 48px 0 32px;
-            }
-            .header h1 {
-                font-size: 2rem;
-                font-weight: 800;
-                letter-spacing: -0.5px;
-                background: linear-gradient(135deg, #7c6ff7, #a78bfa, #c084fc);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-            .header p {
-                color: var(--text-dim);
-                margin-top: 8px;
-                font-size: 0.9rem;
-            }
+    .body{
+      padding: 18px 22px 22px;
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
 
-            /* Search Area */
-            .search-area {
-                position: sticky;
-                top: 0;
-                z-index: 100;
-                background: var(--bg);
-                padding: 16px 0 12px;
-            }
-            .search-box {
-                position: relative;
-            }
-            .search-box svg {
-                position: absolute;
-                left: 16px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 20px;
-                height: 20px;
-                color: var(--text-dim);
-                pointer-events: none;
-            }
-            .search-box input {
-                width: 100%;
-                padding: 16px 16px 16px 48px;
-                border-radius: 14px;
-                border: 2px solid var(--border);
-                background: var(--surface);
-                color: var(--text);
-                font-size: 1.05rem;
-                font-family: inherit;
-                outline: none;
-                transition:
-                    border-color 0.2s,
-                    box-shadow 0.2s;
-            }
-            .search-box input:focus {
-                border-color: var(--accent);
-                box-shadow: 0 0 0 4px var(--accent-glow);
-            }
-            .search-box input::placeholder {
-                color: var(--text-dim);
-            }
+    /* TWO-BUTTON ROW (left-right) */
+    .btn-row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
 
-            /* Controls Row */
-            .controls {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                margin-top: 12px;
-                flex-wrap: wrap;
-            }
-            .mode-btn {
-                padding: 8px 16px;
-                border-radius: 10px;
-                border: 1.5px solid var(--border);
-                background: var(--surface);
-                color: var(--text-dim);
-                font-size: 0.82rem;
-                font-family: inherit;
-                font-weight: 500;
-                cursor: pointer;
-                transition: all 0.2s;
-                user-select: none;
-            }
-            .mode-btn:hover {
-                border-color: var(--accent);
-                color: var(--text);
-            }
-            .mode-btn.active {
-                background: var(--accent);
-                border-color: var(--accent);
-                color: #fff;
-            }
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 14px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: rgba(241,243,255,.92);
+      text-decoration:none;
+      font-weight: 950;
+      transition: transform .14s ease, background .14s ease, border-color .14s ease, box-shadow .14s ease;
+      min-height: 64px;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.075);
+      border-color: rgba(255,255,255,.22);
+      box-shadow: var(--shadow2);
+    }
+    .btn .meta{
+      font-size: 0.78rem;
+      color: rgba(241,243,255,.66);
+      font-weight: 800;
+      margin-top: 3px;
+    }
+    .pill{
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 950;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(241,243,255,.75);
+      white-space:nowrap;
+      flex-shrink:0;
+    }
 
-            /* Trap Button */
-            .trap-btn {
-                position: relative;
-                padding: 8px 16px;
-                border-radius: 10px;
-                border: 1.5px solid var(--border);
-                background: var(--surface);
-                color: var(--text-dim);
-                font-size: 0.82rem;
-                font-family: inherit;
-                font-weight: 500;
-                cursor: pointer;
-                transition: all 0.2s;
-                user-select: none;
-                margin-left: auto;
-            }
-            .trap-btn:hover {
-                border-color: var(--red);
-                color: var(--red);
-            }
-            .trap-btn.has-traps {
-                border-color: var(--red);
-                color: var(--red);
-                background: var(--red-glow);
-            }
-            .trap-badge {
-                position: absolute;
-                top: -6px;
-                right: -6px;
-                background: var(--red);
-                color: #fff;
-                font-size: 0.65rem;
-                font-weight: 700;
-                width: 18px;
-                height: 18px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                line-height: 1;
-            }
+    .tips{
+      margin-top: 2px;
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      color: rgba(241,243,255,.62);
+      font-size: 0.82rem;
+      font-weight: 850;
+    }
+    .tip{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
 
-            /* Stats Row */
-            .stats-row {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                margin-top: 10px;
-                flex-wrap: wrap;
-            }
-            .stat-chip {
-                font-size: 0.78rem;
-                color: var(--text-dim);
-                font-weight: 500;
-            }
-            .stat-chip span {
-                font-weight: 700;
-            }
-            .stat-chip .green {
-                color: var(--green);
-            }
-            .stat-chip .orange {
-                color: var(--orange);
-            }
+    .foot{
+      padding: 14px 22px 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: rgba(241,243,255,.55);
+      font-size: 0.78rem;
+      line-height: 1.45;
+      background: rgba(255,255,255,.02);
+    }
 
-            /* Reset Button */
-            .reset-btn {
-                padding: 6px 14px;
-                border-radius: 8px;
-                border: 1.5px solid var(--border);
-                background: var(--surface);
-                color: var(--red);
-                font-size: 0.78rem;
-                font-family: inherit;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.2s;
-                user-select: none;
-            }
-            .reset-btn:hover {
-                background: var(--red-glow);
-                border-color: var(--red);
-            }
-            .reset-btn.hidden {
-                display: none;
-            }
+    code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.92em;
+      color: rgba(241,243,255,.72);
+    }
 
-            /* Add Button */
-            .add-btn {
-                margin-left: auto;
-                padding: 6px 12px;
-                border-radius: 8px;
-                border: 1.5px solid var(--green);
-                background: transparent;
-                color: var(--green);
-                font-size: 0.78rem;
-                font-family: inherit;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.2s;
-                user-select: none;
-            }
-            .add-btn:hover {
-                background: var(--green-glow);
-            }
+    /* Responsive: stack buttons on mobile */
+    @media (max-width: 640px){
+      .btn-row{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px){
+      body{ padding: 12px; }
+      .card{ border-radius: 22px; }
+      .head{ padding: 18px; gap: 12px; }
+      .icon-wrap{ width: 46px; height: 46px; border-radius: 14px; }
+      .title h1{ font-size: 1.40rem; }
+      .body{ padding: 16px 18px 18px; }
+      .foot{ padding: 12px 18px 16px; }
+      .btn{ padding: 13px 13px; border-radius: 18px; }
+    }
+    
+    .btn-left{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
 
-            /* Results */
-            .results {
-                margin-top: 16px;
-                padding-bottom: 80px;
-            }
-            .results-info {
-                padding: 12px 0;
-                font-size: 0.82rem;
-                color: var(--text-dim);
-                border-bottom: 1px solid var(--border);
-                margin-bottom: 8px;
-            }
-            .results-info strong {
-                color: var(--orange);
-            }
-            .word-list {
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-            }
+    .btn-icon{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.05);
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <header class="head">
+      <div class="icon-wrap">
+        <img src="icon.jpg" alt="Sambung icon" />
+      </div>
+      <div class="title">
+        <h1>Cheatsheet Roblox</h1>
+        <p>
+          Sambung Kata & Last Letter
+        </p>
+      </div>
+    </header>
 
-            /* Word Item */
-            .word-item {
-                padding: 10px 12px;
-                border-radius: 10px;
-                background: var(--surface);
-                border: 1px solid transparent;
-                transition: all 0.15s;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                user-select: none;
-            }
-            .word-item:hover {
-                background: var(--surface2);
-                border-color: var(--border);
-            }
-            .word-item.used {
-                opacity: 0.45;
-            }
-            .word-item.used .word-text {
-                text-decoration: line-through;
-                text-decoration-color: var(--text-dim);
-            }
-
-            /* Checkbox */
-            .check-box {
-                width: 22px;
-                height: 22px;
-                border-radius: 6px;
-                border: 2px solid var(--border);
-                background: var(--surface2);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-                transition: all 0.15s;
-            }
-            .check-box svg {
-                width: 14px;
-                height: 14px;
-                color: #fff;
-                opacity: 0;
-                transition: opacity 0.15s;
-            }
-            .word-item.used .check-box {
-                background: var(--green);
-                border-color: var(--green);
-            }
-            .word-item.used .check-box svg {
-                opacity: 1;
-            }
-
-            .word-text {
-                font-weight: 600;
-                font-size: 0.95rem;
-                letter-spacing: 0.3px;
-                flex: 1;
-            }
-            .word-text mark {
-                background: var(--accent-glow);
-                color: var(--accent);
-                border-radius: 3px;
-                padding: 0 2px;
-                font-weight: 700;
-            }
-            .word-len {
-                font-size: 0.75rem;
-                color: var(--text-dim);
-                background: var(--surface2);
-                padding: 3px 8px;
-                border-radius: 6px;
-                font-weight: 500;
-                white-space: nowrap;
-                flex-shrink: 0;
-            }
-
-            /* Trash Button */
-            .trash-btn {
-                width: 28px;
-                height: 28px;
-                border-radius: 7px;
-                border: none;
-                background: transparent;
-                color: var(--text-dim);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                flex-shrink: 0;
-                opacity: 0.4;
-                transition: all 0.15s;
-            }
-            .trash-btn svg {
-                width: 16px;
-                height: 16px;
-            }
-            .trash-btn:hover {
-                opacity: 1;
-                background: var(--red-glow);
-                color: var(--red);
-            }
-
-            /* Copy Button */
-            .copy-btn {
-                width: 28px;
-                height: 28px;
-                border-radius: 7px;
-                border: none;
-                background: transparent;
-                color: var(--text-dim);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                flex-shrink: 0;
-                opacity: 0.4;
-                transition: all 0.15s;
-            }
-            .copy-btn svg {
-                width: 15px;
-                height: 15px;
-            }
-            .copy-btn:hover {
-                opacity: 1;
-                background: var(--accent-glow);
-                color: var(--accent);
-            }
-            .copy-btn.copied {
-                opacity: 1;
-                color: var(--green);
-            }
-
-            /* Loading & Empty State */
-            .state-msg {
-                text-align: center;
-                padding: 48px 20px;
-                color: var(--text-dim);
-            }
-            .state-msg .emoji {
-                font-size: 2.5rem;
-                margin-bottom: 12px;
-            }
-            .state-msg h3 {
-                font-size: 1rem;
-                margin-bottom: 6px;
-                color: var(--text);
-            }
-            .state-msg p {
-                font-size: 0.85rem;
-            }
-
-            /* Load More */
-            .load-more {
-                display: block;
-                width: 100%;
-                padding: 14px;
-                margin-top: 8px;
-                border-radius: 10px;
-                border: 1.5px dashed var(--border);
-                background: transparent;
-                color: var(--accent);
-                font-family: inherit;
-                font-size: 0.88rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.2s;
-            }
-            .load-more:hover {
-                background: var(--accent-glow);
-                border-color: var(--accent);
-            }
-
-            /* Spinner */
-            .spinner {
-                width: 32px;
-                height: 32px;
-                border: 3px solid var(--border);
-                border-top-color: var(--accent);
-                border-radius: 50%;
-                animation: spin 0.7s linear infinite;
-                margin: 0 auto 16px;
-            }
-            @keyframes spin {
-                to {
-                    transform: rotate(360deg);
-                }
-            }
-
-            /* Confirm dialog */
-            .confirm-overlay {
-                position: fixed;
-                inset: 0;
-                background: rgba(0, 0, 0, 0.6);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 999;
-            }
-            .confirm-box {
-                background: var(--surface);
-                border: 1px solid var(--border);
-                border-radius: 16px;
-                padding: 28px;
-                max-width: 340px;
-                text-align: center;
-            }
-            .confirm-box h3 {
-                margin-bottom: 8px;
-                font-size: 1rem;
-            }
-            .confirm-box p {
-                font-size: 0.85rem;
-                color: var(--text-dim);
-                margin-bottom: 20px;
-            }
-            .confirm-box .btn-row {
-                display: flex;
-                gap: 10px;
-            }
-            .confirm-box button {
-                flex: 1;
-                padding: 10px;
-                border-radius: 10px;
-                border: 1.5px solid var(--border);
-                font-family: inherit;
-                font-size: 0.85rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.2s;
-            }
-            .confirm-box .cancel-btn {
-                background: var(--surface2);
-                color: var(--text);
-            }
-            .confirm-box .danger-btn {
-                background: var(--red);
-                border-color: var(--red);
-                color: #fff;
-            }
-            .confirm-box .success-btn {
-                background: var(--green);
-                border-color: var(--green);
-                color: #fff;
-            }
-            .confirm-box .success-btn:disabled {
-                opacity: 0.4;
-                cursor: not-allowed;
-            }
-            .confirm-box input[type="text"] {
-                width: 100%;
-                padding: 12px 14px;
-                border-radius: 10px;
-                border: 2px solid var(--border);
-                background: var(--surface2);
-                color: var(--text);
-                font-size: 1rem;
-                font-family: inherit;
-                font-weight: 600;
-                letter-spacing: 0.5px;
-                outline: none;
-                margin-bottom: 8px;
-                transition: border-color 0.2s;
-            }
-            .confirm-box input[type="text"]:focus {
-                border-color: var(--accent);
-            }
-            .confirm-box .input-error {
-                font-size: 0.75rem;
-                color: var(--red);
-                min-height: 18px;
-                margin-bottom: 12px;
-            }
-
-            /* Trap dialog extras */
-            .trap-dialog {
-                max-width: 400px;
-                text-align: left;
-            }
-            .trap-dialog h3 {
-                text-align: center;
-            }
-            .trap-dialog p {
-                text-align: center;
-            }
-            .trap-dialog .btn-row {
-                margin-top: 16px;
-            }
-            .trap-tags {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-                min-height: 36px;
-                padding: 10px;
-                border-radius: 10px;
-                border: 2px solid var(--border);
-                background: var(--surface2);
-                margin-bottom: 8px;
-                align-items: center;
-            }
-            .trap-tag {
-                display: inline-flex;
-                align-items: center;
-                gap: 4px;
-                background: var(--red-glow);
-                border: 1px solid var(--red);
-                color: var(--red);
-                padding: 4px 10px;
-                border-radius: 8px;
-                font-size: 0.82rem;
-                font-weight: 600;
-                font-family: inherit;
-            }
-            .trap-tag .remove-tag {
-                cursor: pointer;
-                font-size: 1rem;
-                line-height: 1;
-                opacity: 0.7;
-                transition: opacity 0.15s;
-            }
-            .trap-tag .remove-tag:hover {
-                opacity: 1;
-            }
-            .trap-input-row {
-                display: flex;
-                gap: 8px;
-                margin-bottom: 4px;
-            }
-            .trap-input-row input {
-                flex: 1;
-            }
-            .trap-input-row button {
-                flex: none !important;
-                padding: 10px 16px !important;
-            }
-            .trap-suggestions {
-                margin-top: 12px;
-            }
-            .trap-suggestions p {
-                text-align: left !important;
-                font-size: 0.75rem;
-                color: var(--text-dim);
-                margin-bottom: 8px;
-                font-weight: 600;
-            }
-            .trap-sug-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-            }
-            .trap-sug-btn {
-                padding: 4px 12px !important;
-                border-radius: 8px !important;
-                border: 1.5px solid var(--border) !important;
-                background: var(--surface) !important;
-                color: var(--text-dim) !important;
-                font-size: 0.78rem !important;
-                font-family: inherit;
-                font-weight: 600 !important;
-                cursor: pointer;
-                transition: all 0.2s;
-                flex: none !important;
-            }
-            .trap-sug-btn:hover {
-                border-color: var(--red) !important;
-                color: var(--red) !important;
-                background: var(--red-glow) !important;
-            }
-            .trap-sug-btn.already {
-                opacity: 0.35;
-                pointer-events: none;
-            }
-
-            /* Killer cheatsheet */
-            .killer-cheatsheet {
-                margin-top: 16px;
-                border-top: 1px solid var(--border);
-                padding-top: 14px;
-            }
-            .killer-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 12px;
-                gap: 8px;
-            }
-            .killer-header p {
-                text-align: left !important;
-                font-size: 0.75rem;
-                color: #f59e0b;
-                font-weight: 700;
-                margin: 0;
-            }
-            .killer-subtitle {
-                color: var(--text-dim);
-                font-weight: 500;
-            }
-            .killer-add-all {
-                padding: 5px 14px !important;
-                border-radius: 8px !important;
-                border: 1.5px solid rgba(245, 158, 11, 0.4) !important;
-                background: rgba(245, 158, 11, 0.1) !important;
-                color: #f59e0b !important;
-                font-size: 0.72rem !important;
-                font-family: inherit;
-                font-weight: 600 !important;
-                cursor: pointer;
-                transition: all 0.2s;
-                white-space: nowrap;
-                flex-shrink: 0;
-            }
-            .killer-add-all:hover {
-                background: rgba(245, 158, 11, 0.25) !important;
-                border-color: #f59e0b !important;
-            }
-            .killer-tier {
-                margin-bottom: 10px;
-            }
-            .killer-tier-head {
-                font-size: 0.73rem;
-                font-weight: 700;
-                color: var(--text);
-                margin-bottom: 6px;
-                text-align: left;
-            }
-            .killer-tier-desc {
-                font-weight: 400;
-                color: var(--text-dim);
-            }
-            .killer-sug .killer-count {
-                font-size: 0.62rem;
-                opacity: 0.5;
-                margin-left: 2px;
-            }
-
-            /* Trap match indicator on word items */
-            .trap-match {
-                font-size: 0.7rem;
-                font-weight: 600;
-                color: var(--red);
-                background: var(--red-glow);
-                border: 1px solid var(--red);
-                padding: 2px 8px;
-                border-radius: 6px;
-                white-space: nowrap;
-                flex-shrink: 0;
-            }
-
-            /* Responsive */
-            @media (max-width: 480px) {
-                .header {
-                    padding: 32px 0 24px;
-                }
-                .header h1 {
-                    font-size: 1.5rem;
-                }
-                .search-box input {
-                    padding: 14px 14px 14px 44px;
-                    font-size: 1rem;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1>Sambung Kata</h1>
-                <p>Cheatsheet 71.000+ kata Bahasa Indonesia dari KBBI</p>
-            </div>
-
-            <div class="search-area">
-                <div class="search-box">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="2"
-                        stroke="currentColor"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                        />
-                    </svg>
-                    <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="Ketik prefix atau suffix kata..."
-                        autocomplete="off"
-                        spellcheck="false"
-                    />
-                </div>
-                <div class="controls">
-                    <button
-                        class="mode-btn active"
-                        data-mode="prefix"
-                        onclick="setMode('prefix')"
-                    >
-                        Awalan (Prefix)
-                    </button>
-                    <button
-                        class="mode-btn"
-                        data-mode="suffix"
-                        onclick="setMode('suffix')"
-                    >
-                        Akhiran (Suffix)
-                    </button>
-                    <button
-                        class="mode-btn"
-                        data-mode="contains"
-                        onclick="setMode('contains')"
-                    >
-                        Mengandung
-                    </button>
-                    <button
-                        class="trap-btn"
-                        id="trapBtn"
-                        onclick="showTrapDialog()"
-                    >
-                        🪤 Trap
-                    </button>
-                </div>
-                <div class="stats-row">
-                    <div class="stat-chip">
-                        Total:
-                        <span class="green" id="totalWords">...</span> kata
-                    </div>
-                    <div class="stat-chip">
-                        Terpakai: <span class="orange" id="usedCount">0</span>
-                    </div>
-                    <div
-                        class="stat-chip"
-                        id="deletedChip"
-                        style="display: none"
-                    >
-                        Dihapus:
-                        <span style="color: var(--red)" id="deletedCount"
-                            >0</span
-                        >
-                    </div>
-                    <button class="add-btn" onclick="showAddDialog()">
-                        + Tambah
-                    </button>
-                    <button
-                        class="reset-btn hidden"
-                        id="resetBtn"
-                        onclick="confirmReset()"
-                    >
-                        Reset Semua
-                    </button>
-                </div>
-            </div>
-
-            <div class="results" id="results">
-                <div class="state-msg" id="loadingState">
-                    <div class="spinner"></div>
-                    <h3>Memuat database kata...</h3>
-                    <p>Sabar ya, lagi download 71k+ kata</p>
-                </div>
-            </div>
+    <section class="body">
+  <div class="btn-row">
+  
+    <a class="btn" href="./id/">
+      <div class="btn-left">
+        <img src="sk.png" alt="ID Icon" class="btn-icon">
+        <div>
+          Sambung Kata
+          <div class="meta">Versi Indonesia</div>
         </div>
-
-        <script>
-            // --- State ---
-            let allWords = [];
-            let currentMode = "prefix";
-            let currentQuery = "";
-            let filteredWords = [];
-            let displayCount = 100;
-            const BATCH_SIZE = 100;
-
-            // Used words (persisted in localStorage)
-            let usedWords = new Set(
-                JSON.parse(localStorage.getItem("sk_used") || "[]"),
-            );
-
-            // Deleted words (persisted in localStorage)
-            let deletedWords = new Set(
-                JSON.parse(localStorage.getItem("sk_deleted") || "[]"),
-            );
-
-            // Manually added words (persisted in localStorage)
-            let addedWords = new Set(
-                JSON.parse(localStorage.getItem("sk_added") || "[]"),
-            );
-
-            // Trap suffixes (persisted in localStorage)
-            let trapSuffixes = JSON.parse(
-                localStorage.getItem("sk_traps") || "[]",
-            );
-
-            // --- DOM ---
-            const searchInput = document.getElementById("searchInput");
-            const resultsDiv = document.getElementById("results");
-            const totalWordsEl = document.getElementById("totalWords");
-            const usedCountEl = document.getElementById("usedCount");
-            const resetBtn = document.getElementById("resetBtn");
-            const loadingState = document.getElementById("loadingState");
-            const deletedCountEl = document.getElementById("deletedCount");
-            const deletedChip = document.getElementById("deletedChip");
-
-            // --- Trap persistence & UI ---
-            function saveTraps() {
-                localStorage.setItem("sk_traps", JSON.stringify(trapSuffixes));
-                updateTrapBtn();
-            }
-
-            function updateTrapBtn() {
-                const btn = document.getElementById("trapBtn");
-                const existing = btn.querySelector(".trap-badge");
-                if (existing) existing.remove();
-                if (trapSuffixes.length > 0) {
-                    btn.classList.add("has-traps");
-                    const badge = document.createElement("span");
-                    badge.className = "trap-badge";
-                    badge.textContent = trapSuffixes.length;
-                    btn.appendChild(badge);
-                } else {
-                    btn.classList.remove("has-traps");
-                }
-            }
-
-            const TRAP_SUGGESTIONS = [
-                { suffix: "z", label: "z — hampir ga ada kata awalan z" },
-                { suffix: "x", label: "x — nyaris mustahil" },
-                { suffix: "f", label: "f — pilihan dikit" },
-                { suffix: "v", label: "v — jarang banget" },
-                { suffix: "q", label: "q — ga ada di KBBI" },
-                { suffix: "za", label: "za — susah nyambung" },
-                { suffix: "zi", label: "zi — bikin pusing" },
-                { suffix: "zu", label: "zu — mati kutu" },
-                { suffix: "ks", label: "ks — tricky" },
-                { suffix: "nz", label: "nz — hampir impossible" },
-            ];
-
-            // Killer suffix cheatsheet — validated from killer words database
-            const KILLER_CHEATSHEET = [
-                {
-                    tier: "🔴 Mustahil",
-                    desc: "Lawan hampir ga bisa nyambung",
-                    suffixes: [
-                        { suffix: "ix", count: 0 },
-                        { suffix: "ax", count: 0 },
-                        { suffix: "ux", count: 0 },
-                        { suffix: "iks", count: 0 },
-                        { suffix: "iat", count: 3 },
-                        { suffix: "if", count: 5 },
-                        { suffix: "ks", count: 6 },
-                        { suffix: "ex", count: 6 },
-                        { suffix: "tif", count: 6 },
-                        { suffix: "nia", count: 7 },
-                        { suffix: "mia", count: 9 },
-                        { suffix: "sif", count: 10 },
-                    ],
-                },
-                {
-                    tier: "🟠 Susah",
-                    desc: "Pilihan lawan sangat terbatas",
-                    suffixes: [
-                        { suffix: "ia", count: 11 },
-                        { suffix: "lia", count: 12 },
-                        { suffix: "ria", count: 15 },
-                        { suffix: "bia", count: 30 },
-                        { suffix: "sia", count: 37 },
-                        { suffix: "aks", count: 41 },
-                    ],
-                },
-                {
-                    tier: "🟡 Tricky",
-                    desc: "Masih bisa tapi bikin mikir keras",
-                    suffixes: [
-                        { suffix: "ik", count: 65 },
-                        { suffix: "is", count: 190 },
-                    ],
-                },
-            ];
-
-            function showTrapDialog() {
-                const overlay = document.createElement("div");
-                overlay.className = "confirm-overlay";
-                const killerHtml = KILLER_CHEATSHEET.map((tier) => {
-                    const btns = tier.suffixes
-                        .map((s) => {
-                            const already = trapSuffixes.includes(s.suffix);
-                            return `<button class="trap-sug-btn killer-sug${already ? " already" : ""}" title="${s.count} kata bisa nyambung" onclick="addTrapSuffix('${s.suffix}')">${s.suffix} <span class="killer-count">${s.count}</span></button>`;
-                        })
-                        .join("");
-                    return `<div class="killer-tier">
-                        <div class="killer-tier-head">${tier.tier} <span class="killer-tier-desc">— ${tier.desc}</span></div>
-                        <div class="trap-sug-list">${btns}</div>
-                    </div>`;
-                }).join("");
-
-                overlay.innerHTML = `
-        <div class="confirm-box trap-dialog">
-          <h3>🪤 Atur Trap Suffixes</h3>
-          <p>Kata dengan akhiran ini bakal diprioritasin di hasil pencarian biar lawan susah nyambung.</p>
-          <div class="trap-tags" id="trapTags"></div>
-          <div class="trap-input-row">
-            <input type="text" id="trapInput" placeholder="ketik suffix, misal: z" autocomplete="off" spellcheck="false" />
-            <button class="success-btn" onclick="addTrapFromInput()">+</button>
-          </div>
-          <div class="input-error" id="trapError"></div>
-          <div class="trap-suggestions">
-            <p>💡 Saran suffix jebakan:</p>
-            <div class="trap-sug-list" id="trapSugList"></div>
-          </div>
-          <div class="killer-cheatsheet">
-            <div class="killer-header">
-              <p>💀 Killer Cheatsheet <span class="killer-subtitle">— angka = kata yang bisa nyambung (makin kecil makin mematikan)</span></p>
-              <button class="killer-add-all" onclick="addAllKillerSuffixes()">Tambah semua 💀</button>
-            </div>
-            ${killerHtml}
-          </div>
-          <div class="btn-row">
-            <button class="cancel-btn" onclick="this.closest('.confirm-overlay').remove()">Tutup</button>
-            <button class="danger-btn" onclick="clearAllTraps()">Hapus Semua</button>
-          </div>
+      </div>
+      <span class="pill">Buka →</span>
+    </a>
+  
+    <a class="btn" href="./en/">
+      <div class="btn-left">
+        <img src="lt.png" alt="EN Icon" class="btn-icon">
+        <div>
+          Last Letter
+          <div class="meta">English Version</div>
         </div>
-      `;
-                document.body.appendChild(overlay);
-                overlay.addEventListener("click", (e) => {
-                    if (e.target === overlay) overlay.remove();
-                });
-
-                renderTrapTags();
-                renderTrapSuggestions();
-
-                const trapInput = document.getElementById("trapInput");
-                trapInput.focus();
-                trapInput.addEventListener("keydown", (e) => {
-                    if (e.key === "Enter") addTrapFromInput();
-                });
-            }
-
-            function renderTrapTags() {
-                const container = document.getElementById("trapTags");
-                if (!container) return;
-                if (trapSuffixes.length === 0) {
-                    container.innerHTML =
-                        '<span style="color:var(--text-dim);font-size:0.8rem;">Belum ada trap suffix...</span>';
-                    return;
-                }
-                container.innerHTML = trapSuffixes
-                    .map(
-                        (s) =>
-                            `<span class="trap-tag">${s}<span class="remove-tag" onclick="removeTrap('${s}')">&times;</span></span>`,
-                    )
-                    .join("");
-            }
-
-            function renderTrapSuggestions() {
-                const list = document.getElementById("trapSugList");
-                if (!list) return;
-                list.innerHTML = TRAP_SUGGESTIONS.map((s) => {
-                    const already = trapSuffixes.includes(s.suffix);
-                    return `<button class="trap-sug-btn${already ? " already" : ""}" title="${s.label}" onclick="addTrapSuffix('${s.suffix}')">${s.suffix}</button>`;
-                }).join("");
-            }
-
-            function addTrapFromInput() {
-                const input = document.getElementById("trapInput");
-                const err = document.getElementById("trapError");
-                const raw = input.value.trim().toLowerCase();
-                if (!raw) return;
-
-                // Support comma-separated input
-                const parts = raw
-                    .split(",")
-                    .map((s) => s.trim())
-                    .filter(Boolean);
-                let added = 0;
-                for (const part of parts) {
-                    if (!/^[a-z]+$/.test(part)) {
-                        err.textContent = `"${part}" — huruf a-z aja!`;
-                        continue;
-                    }
-                    if (trapSuffixes.includes(part)) {
-                        err.textContent = `"${part}" udah ada`;
-                        continue;
-                    }
-                    trapSuffixes.push(part);
-                    added++;
-                    err.textContent = "";
-                }
-
-                if (added > 0) {
-                    saveTraps();
-                    renderTrapTags();
-                    renderTrapSuggestions();
-                    renderKillerSuggestions();
-                    if (currentQuery.trim()) renderResults();
-                }
-                input.value = "";
-                input.focus();
-            }
-
-            function addTrapSuffix(suffix) {
-                if (trapSuffixes.includes(suffix)) return;
-                trapSuffixes.push(suffix);
-                saveTraps();
-                renderTrapTags();
-                renderTrapSuggestions();
-                renderKillerSuggestions();
-                if (currentQuery.trim()) renderResults();
-            }
-
-            function removeTrap(suffix) {
-                trapSuffixes = trapSuffixes.filter((s) => s !== suffix);
-                saveTraps();
-                renderTrapTags();
-                renderTrapSuggestions();
-                renderKillerSuggestions();
-                if (currentQuery.trim()) renderResults();
-            }
-
-            function clearAllTraps() {
-                trapSuffixes = [];
-                saveTraps();
-                renderTrapTags();
-                renderTrapSuggestions();
-                renderKillerSuggestions();
-                if (currentQuery.trim()) renderResults();
-            }
-
-            function addAllKillerSuffixes() {
-                let added = 0;
-                for (const tier of KILLER_CHEATSHEET) {
-                    for (const s of tier.suffixes) {
-                        if (!trapSuffixes.includes(s.suffix)) {
-                            trapSuffixes.push(s.suffix);
-                            added++;
-                        }
-                    }
-                }
-                if (added > 0) {
-                    saveTraps();
-                    renderTrapTags();
-                    renderTrapSuggestions();
-                    renderKillerSuggestions();
-                    if (currentQuery.trim()) renderResults();
-                }
-            }
-
-            function renderKillerSuggestions() {
-                document.querySelectorAll(".killer-sug").forEach((btn) => {
-                    const suffix = btn.textContent.trim().split(/\s/)[0];
-                    btn.classList.toggle(
-                        "already",
-                        trapSuffixes.includes(suffix),
-                    );
-                });
-            }
-
-            // --- Persistence ---
-            function saveUsed() {
-                localStorage.setItem("sk_used", JSON.stringify([...usedWords]));
-                updateUsedCount();
-            }
-
-            function updateUsedCount() {
-                usedCountEl.textContent =
-                    usedWords.size.toLocaleString("id-ID");
-                resetBtn.classList.toggle("hidden", usedWords.size === 0);
-            }
-
-            // --- Deleted words persistence (permanent) ---
-            function saveDeleted() {
-                localStorage.setItem(
-                    "sk_deleted",
-                    JSON.stringify([...deletedWords]),
-                );
-                updateDeletedCount();
-            }
-
-            function updateDeletedCount() {
-                deletedCountEl.textContent =
-                    deletedWords.size.toLocaleString("id-ID");
-                deletedChip.style.display = deletedWords.size > 0 ? "" : "none";
-            }
-
-            // --- Add word ---
-            function saveAdded() {
-                localStorage.setItem(
-                    "sk_added",
-                    JSON.stringify([...addedWords]),
-                );
-            }
-
-            function binaryInsert(arr, word) {
-                let lo = 0,
-                    hi = arr.length;
-                while (lo < hi) {
-                    const mid = (lo + hi) >>> 1;
-                    if (arr[mid] < word) lo = mid + 1;
-                    else hi = mid;
-                }
-                arr.splice(lo, 0, word);
-            }
-
-            function showAddDialog() {
-                const overlay = document.createElement("div");
-                overlay.className = "confirm-overlay";
-                overlay.innerHTML = `
-        <div class="confirm-box">
-          <h3>Tambah Kata Baru</h3>
-          <p>Masukin kata yang mau ditambahin ke database.</p>
-          <input type="text" id="addWordInput" placeholder="ketik kata..." autocomplete="off" spellcheck="false" />
-          <div class="input-error" id="addWordError"></div>
-          <div class="btn-row">
-            <button class="cancel-btn" onclick="this.closest('.confirm-overlay').remove()">Batal</button>
-            <button class="success-btn" id="addWordBtn" onclick="doAddWord()" disabled>Tambah</button>
-          </div>
-        </div>
-      `;
-                document.body.appendChild(overlay);
-                overlay.addEventListener("click", (e) => {
-                    if (e.target === overlay) overlay.remove();
-                });
-
-                const input = document.getElementById("addWordInput");
-                const btn = document.getElementById("addWordBtn");
-                const err = document.getElementById("addWordError");
-
-                input.focus();
-                input.addEventListener("input", () => {
-                    const w = input.value.trim().toLowerCase();
-                    input.value = input.value.toLowerCase();
-                    if (!w) {
-                        err.textContent = "";
-                        btn.disabled = true;
-                        return;
-                    }
-                    if (!/^[a-z]+$/.test(w)) {
-                        err.textContent = "Huruf a-z aja, tanpa spasi/simbol";
-                        btn.disabled = true;
-                        return;
-                    }
-                    if (w.length < 3) {
-                        err.textContent = "Minimal 3 huruf";
-                        btn.disabled = true;
-                        return;
-                    }
-                    if (allWords.includes(w)) {
-                        err.textContent = "Kata udah ada di database";
-                        btn.disabled = true;
-                        return;
-                    }
-                    err.textContent = "";
-                    btn.disabled = false;
-                });
-                input.addEventListener("keydown", (e) => {
-                    if (e.key === "Enter" && !btn.disabled) doAddWord();
-                });
-            }
-
-            function doAddWord() {
-                const input = document.getElementById("addWordInput");
-                const word = input.value.trim().toLowerCase();
-                if (!word) return;
-
-                // Add to allWords (sorted insert)
-                binaryInsert(allWords, word);
-
-                // Persist addition to words.json via server API
-                fetch("/api/add", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ word }),
-                }).catch((err) =>
-                    console.warn("Failed to add to server:", err),
-                );
-
-                // Update total
-                totalWordsEl.textContent =
-                    allWords.length.toLocaleString("id-ID");
-
-                // Close dialog
-                document.querySelector(".confirm-overlay")?.remove();
-
-                // Re-render if there's an active search
-                if (currentQuery.trim()) renderResults();
-            }
-
-            // --- Delete word (instant, persists to server) ---
-            function deleteWord(word, el, evt) {
-                evt.stopPropagation();
-
-                // Remove from allWords (sorted, use binary search)
-                const idx = allWords.indexOf(word);
-                if (idx !== -1) allWords.splice(idx, 1);
-
-                // Remove from filteredWords
-                const fIdx = filteredWords.indexOf(word);
-                if (fIdx !== -1) filteredWords.splice(fIdx, 1);
-
-                // Remove from usedWords if present
-                usedWords.delete(word);
-                saveUsed();
-
-                // Remove from addedWords if it was manually added
-                if (addedWords.has(word)) {
-                    addedWords.delete(word);
-                    saveAdded();
-                }
-
-                // Persist deletion to words.json via server API
-                fetch("/api/delete", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ word }),
-                }).catch((err) =>
-                    console.warn("Failed to delete from server:", err),
-                );
-
-                // Animate out and remove DOM element
-                el.style.transition = "opacity 0.2s, transform 0.2s";
-                el.style.opacity = "0";
-                el.style.transform = "translateX(20px)";
-                setTimeout(() => el.remove(), 200);
-
-                // Update total & results info
-                totalWordsEl.textContent =
-                    allWords.length.toLocaleString("id-ID");
-                const info = resultsDiv.querySelector(".results-info");
-                if (info) {
-                    info.innerHTML = `Ditemukan <strong>${filteredWords.length.toLocaleString("id-ID")}</strong> kata (urutan acak)`;
-                }
-            }
-
-            // --- Toggle word used ---
-            function toggleUsed(word, el) {
-                if (usedWords.has(word)) {
-                    usedWords.delete(word);
-                    el.classList.remove("used");
-                } else {
-                    usedWords.add(word);
-                    el.classList.add("used");
-                }
-                saveUsed();
-            }
-
-            // --- Reset ---
-            function confirmReset() {
-                const overlay = document.createElement("div");
-                overlay.className = "confirm-overlay";
-                overlay.innerHTML = `
-        <div class="confirm-box">
-          <h3>Reset semua centangan?</h3>
-          <p>${usedWords.size.toLocaleString("id-ID")} kata yang udah dicentang bakal di-clear.</p>
-          <div class="btn-row">
-            <button class="cancel-btn" onclick="this.closest('.confirm-overlay').remove()">Batal</button>
-            <button class="danger-btn" onclick="doReset()">Reset</button>
-          </div>
-        </div>
-      `;
-                document.body.appendChild(overlay);
-                overlay.addEventListener("click", (e) => {
-                    if (e.target === overlay) overlay.remove();
-                });
-            }
-
-            function doReset() {
-                usedWords.clear();
-                saveUsed();
-                document.querySelector(".confirm-overlay")?.remove();
-                renderResults();
-            }
-
-            // --- Shuffle (Fisher-Yates) ---
-            function shuffle(arr) {
-                const a = [...arr];
-                for (let i = a.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [a[i], a[j]] = [a[j], a[i]];
-                }
-                return a;
-            }
-
-            // --- Load Words ---
-            async function loadWords() {
-                try {
-                    const res = await fetch("words.json");
-                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                    allWords = await res.json();
-                    // Filter out previously deleted words
-                    if (deletedWords.size > 0) {
-                        allWords = allWords.filter((w) => !deletedWords.has(w));
-                    }
-                    // Merge in manually added words
-                    if (addedWords.size > 0) {
-                        for (const w of addedWords) {
-                            if (!allWords.includes(w))
-                                binaryInsert(allWords, w);
-                        }
-                    }
-                    totalWordsEl.textContent =
-                        allWords.length.toLocaleString("id-ID");
-                    updateUsedCount();
-                    updateDeletedCount();
-                    loadingState.remove();
-                    showIdleState();
-                    searchInput.focus();
-                } catch (err) {
-                    loadingState.innerHTML = `
-          <div class="state-msg">
-            <div class="emoji">😵</div>
-            <h3>Gagal memuat data</h3>
-            <p>Pastikan file <code>words.json</code> ada di folder yang sama.<br/>Error: ${err.message}</p>
-          </div>
-        `;
-                }
-            }
-
-            // --- Search Logic ---
-            function filterWords(query, mode) {
-                if (!query) return [];
-                const q = query.toLowerCase().trim();
-                if (!q) return [];
-
-                let results;
-                switch (mode) {
-                    case "prefix":
-                        results = binaryPrefixSearch(q);
-                        break;
-                    case "suffix":
-                        results = allWords.filter((w) => w.endsWith(q));
-                        break;
-                    case "contains":
-                        results = allWords.filter((w) => w.includes(q));
-                        break;
-                    default:
-                        results = [];
-                }
-
-                // Apply trap prioritization
-                if (trapSuffixes.length > 0) {
-                    const trapped = [];
-                    const normal = [];
-                    for (const w of results) {
-                        const matchedTrap = trapSuffixes.find((s) =>
-                            w.endsWith(s),
-                        );
-                        if (matchedTrap) {
-                            trapped.push(w);
-                        } else {
-                            normal.push(w);
-                        }
-                    }
-                    // Shuffle each group independently, traps first
-                    return [...shuffle(trapped), ...shuffle(normal)];
-                }
-
-                // Shuffle results every time
-                return shuffle(results);
-            }
-
-            function getMatchedTrap(word) {
-                if (trapSuffixes.length === 0) return null;
-                // Return the longest matching trap suffix for display
-                let best = null;
-                for (const s of trapSuffixes) {
-                    if (word.endsWith(s)) {
-                        if (!best || s.length > best.length) best = s;
-                    }
-                }
-                return best;
-            }
-
-            // Fast binary search for prefix on sorted array
-            function binaryPrefixSearch(prefix) {
-                let lo = 0,
-                    hi = allWords.length;
-                while (lo < hi) {
-                    const mid = (lo + hi) >>> 1;
-                    if (allWords[mid] < prefix) lo = mid + 1;
-                    else hi = mid;
-                }
-                const start = lo;
-
-                const prefixEnd =
-                    prefix.slice(0, -1) +
-                    String.fromCharCode(
-                        prefix.charCodeAt(prefix.length - 1) + 1,
-                    );
-                hi = allWords.length;
-                while (lo < hi) {
-                    const mid = (lo + hi) >>> 1;
-                    if (allWords[mid] < prefixEnd) lo = mid + 1;
-                    else hi = mid;
-                }
-                const end = lo;
-
-                return allWords.slice(start, end);
-            }
-
-            // --- Rendering ---
-            function highlightMatch(word, query, mode) {
-                const q = query.toLowerCase();
-                let idx;
-                switch (mode) {
-                    case "prefix":
-                        idx = 0;
-                        break;
-                    case "suffix":
-                        idx = word.length - q.length;
-                        break;
-                    case "contains":
-                        idx = word.indexOf(q);
-                        break;
-                }
-                if (idx < 0) return word;
-                const before = word.slice(0, idx);
-                const match = word.slice(idx, idx + q.length);
-                const after = word.slice(idx + q.length);
-                return `${before}<mark>${match}</mark>${after}`;
-            }
-
-            const checkSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>`;
-            const trashSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/></svg>`;
-            const copySvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
-
-            function copyWord(word, btn, evt) {
-                evt.stopPropagation();
-                navigator.clipboard.writeText(word);
-                btn.classList.add("copied");
-                btn.innerHTML = checkSvg;
-                setTimeout(() => {
-                    btn.classList.remove("copied");
-                    btn.innerHTML = copySvg;
-                }, 1000);
-            }
-
-            function buildListHtml(from, to) {
-                let html = "";
-                for (let i = from; i < to; i++) {
-                    const w = filteredWords[i];
-                    const highlighted = highlightMatch(
-                        w,
-                        currentQuery,
-                        currentMode,
-                    );
-                    const isUsed = usedWords.has(w);
-                    const trap = getMatchedTrap(w);
-                    const trapHtml = trap
-                        ? `<span class="trap-match">🪤 …${trap}</span>`
-                        : "";
-                    html += `<div class="word-item${isUsed ? " used" : ""}" onclick="toggleUsed('${w}', this)">
-          <div class="check-box">${checkSvg}</div>
-          <span class="word-text">${highlighted}</span>
-          ${trapHtml}
-          <button class="copy-btn" onclick="copyWord('${w}', this, event)" title="Copy">${copySvg}</button>
-          <span class="word-len">${w.length} huruf</span>
-          <button class="trash-btn" onclick="deleteWord('${w}', this.parentElement, event)" title="Hapus kata">${trashSvg}</button>
-        </div>`;
-                }
-                return html;
-            }
-
-            function renderResults() {
-                if (!currentQuery.trim()) {
-                    showIdleState();
-                    return;
-                }
-
-                filteredWords = filterWords(currentQuery, currentMode);
-                displayCount = BATCH_SIZE;
-
-                if (filteredWords.length === 0) {
-                    resultsDiv.innerHTML = `
-          <div class="state-msg">
-            <div class="emoji">🤷</div>
-            <h3>Ga ada yang cocok</h3>
-            <p>Coba kata lain atau ganti mode pencarian</p>
-          </div>
-        `;
-                    return;
-                }
-
-                const trapCount =
-                    trapSuffixes.length > 0
-                        ? filteredWords.filter((w) => getMatchedTrap(w)).length
-                        : 0;
-                const trapInfo =
-                    trapCount > 0
-                        ? ` · <span style="color:var(--red)">🪤 ${trapCount} jebakan</span>`
-                        : "";
-                const infoHtml = `<div class="results-info">Ditemukan <strong>${filteredWords.length.toLocaleString("id-ID")}</strong> kata (urutan acak)${trapInfo}</div>`;
-                const listHtml = buildListHtml(
-                    0,
-                    Math.min(displayCount, filteredWords.length),
-                );
-                const moreHtml =
-                    filteredWords.length > displayCount
-                        ? `<button class="load-more" onclick="loadMore()">Tampilkan ${Math.min(BATCH_SIZE, filteredWords.length - displayCount)} kata lagi (${displayCount}/${filteredWords.length.toLocaleString("id-ID")})</button>`
-                        : "";
-
-                resultsDiv.innerHTML = `${infoHtml}<div class="word-list" id="wordList">${listHtml}</div>${moreHtml}`;
-            }
-
-            function loadMore() {
-                const prevCount = displayCount;
-                displayCount += BATCH_SIZE;
-                const newTo = Math.min(displayCount, filteredWords.length);
-
-                const wordList = document.getElementById("wordList");
-                wordList.insertAdjacentHTML(
-                    "beforeend",
-                    buildListHtml(prevCount, newTo),
-                );
-
-                const existing = resultsDiv.querySelector(".load-more");
-                if (existing) {
-                    if (displayCount >= filteredWords.length) {
-                        existing.remove();
-                    } else {
-                        existing.textContent = `Tampilkan ${Math.min(BATCH_SIZE, filteredWords.length - displayCount)} kata lagi (${displayCount}/${filteredWords.length.toLocaleString("id-ID")})`;
-                    }
-                }
-            }
-
-            function showIdleState() {
-                resultsDiv.innerHTML = `
-        <div class="state-msg">
-          <div class="emoji">🎮</div>
-          <h3>Siap tempur!</h3>
-          <p>Ketik huruf di atas buat mulai cari kata<br/><span style="font-size:0.75rem;color:var(--text-dim)">Klik kata = tandain terpakai &nbsp;|&nbsp; 🗑 = hapus dari database</span></p>
-        </div>
-      `;
-            }
-
-            // --- Mode Toggle ---
-            function setMode(mode) {
-                currentMode = mode;
-                document.querySelectorAll(".mode-btn").forEach((btn) => {
-                    btn.classList.toggle("active", btn.dataset.mode === mode);
-                });
-                const placeholders = {
-                    prefix: 'Ketik awalan kata... (misal: "men")',
-                    suffix: 'Ketik akhiran kata... (misal: "si")',
-                    contains: 'Ketik huruf yang terkandung... (misal: "ang")',
-                };
-                searchInput.placeholder = placeholders[mode] || "";
-                renderResults();
-                searchInput.focus();
-            }
-
-            // --- Debounce ---
-            let debounceTimer;
-            searchInput.addEventListener("input", (e) => {
-                clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(() => {
-                    currentQuery = e.target.value;
-                    renderResults();
-                }, 150);
-            });
-
-            // --- Keyboard shortcuts ---
-            document.addEventListener("keydown", (e) => {
-                if (e.key === "/" && document.activeElement !== searchInput) {
-                    e.preventDefault();
-                    searchInput.focus();
-                    searchInput.select();
-                }
-                if (e.key === "Escape") {
-                    searchInput.value = "";
-                    currentQuery = "";
-                    renderResults();
-                    searchInput.blur();
-                }
-            });
-
-            // --- Init ---
-            updateTrapBtn();
-            loadWords();
-        </script>
-    </body>
+      </div>
+      <span class="pill">Open →</span>
+    </a>
+  
+  </div>
+    </section>
+
+    <footer class="foot">
+      Sambung Kata: <code>71.437+ Kata</code>, Last Letter: <code>1.057.099+ Words<code>.
+    </footer>
+  </main>
+</body>
 </html>

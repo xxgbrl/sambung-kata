@@ -12,8 +12,8 @@ Cari kata berdasarkan awalan, akhiran, atau huruf yang terkandung. Tandai kata y
 
 ## 📸 Preview
 
-| Pencarian Awalan | Trap Dialog |
-|:---:|:---:|
+|     Pencarian Awalan      |          Trap Dialog           |
+| :-----------------------: | :----------------------------: |
 | Cari kata berawalan "men" | Atur suffix jebakan buat lawan |
 
 ---
@@ -77,11 +77,11 @@ Fitur andalan buat menang sambung kata. Konsepnya sederhana:
 
 ### Saran Suffix Jebakan
 
-| Suffix | Tingkat Kesulitan | Alasan |
-|--------|:-:|--------|
-| `z` | 🔴 | Hampir tidak ada kata berawalan Z di KBBI |
-| `x` | 🔴 | Nyaris mustahil untuk disambung |
-| `q` | 🔴 | Tidak ada di KBBI |
+| Suffix | Tingkat Kesulitan | Alasan                                    |
+| ------ | :---------------: | ----------------------------------------- |
+| `z`    |        🔴         | Hampir tidak ada kata berawalan Z di KBBI |
+| `x`    |        🔴         | Nyaris mustahil untuk disambung           |
+| `q`    |        🔴         | Tidak ada di KBBI                         |
 
 Trap bersifat **prioritas**, bukan filter — kalau tidak ada kata yang cocok dengan trap suffix, kata-kata biasa tetap ditampilkan.
 
@@ -102,6 +102,7 @@ Menghapus kata dari `words.json`.
 ```
 
 **Response:**
+
 ```json
 {
   "ok": true,
@@ -120,6 +121,7 @@ Menambahkan kata baru ke `words.json` (sorted insert).
 ```
 
 **Response:**
+
 ```json
 {
   "ok": true,
@@ -131,9 +133,9 @@ Menambahkan kata baru ke `words.json` (sorted insert).
 
 ## ⌨️ Keyboard Shortcuts
 
-| Shortcut | Aksi |
-|----------|------|
-| `/` | Fokus ke search bar |
+| Shortcut | Aksi                   |
+| -------- | ---------------------- |
+| `/`      | Fokus ke search bar    |
 | `Escape` | Clear pencarian & blur |
 
 ---
@@ -148,11 +150,23 @@ Semua perubahan melalui UI (hapus/tambah) otomatis tersimpan ke `words.json` via
 
 Database kata dikumpulkan dari berbagai sumber KBBI open-source:
 
+Sambung Kata
+
 - [kumpulan-kata-bahasa-indonesia-KBBI](https://github.com/damzaky/kumpulan-kata-bahasa-indonesia-KBBI)
 - [kbbi-harvester-cdn](https://github.com/Naandalist/kbbi-harvester-cdn)
 - [ays-stemming](https://github.com/Notnoir/ays-stemming)
+- [ays-stemming](https://github.com/Notnoir/ays-stemming)
+
+Last Letter
+
+- [wordlist-medicalterms-en](https://github.com/glutanimate/wordlist-medicalterms-en)
+- [Wordlist](https://github.com/jeremy-rifkin/Wordlist)
+- [english-wordlists](https://github.com/mahavivo/english-wordlists)
+- [top-english-wordlists](https://github.com/david47k/top-english-wordlists)
+- [The-Oxford-3000](https://github.com/sapbmw/The-Oxford-3000)
 
 Filter yang diterapkan:
+
 - Hanya huruf `a-z` (tanpa spasi, tanda hubung, atau karakter unicode)
 - Minimal 3 karakter
 - Kata tunggal (bukan frasa)
